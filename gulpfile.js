@@ -116,7 +116,7 @@ gulp.task('sprite', function () {
 
 //js混淆压缩,js库的压缩
 gulp.task('libmin', function () {
-  return gulp.src(['./static/lib/*.js'])
+  return gulp.src(['./static/lib/*.js','!./static/lib/*min.js'])
     .pipe(uglify())
     .pipe(ext_replace('.min.js'))
     .pipe(gulp.dest('./static/lib'))

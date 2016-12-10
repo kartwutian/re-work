@@ -1,7 +1,12 @@
 // 移动端自适应方案，rem+flexbox
 // 1rem == 10px iphone6下，其他尺寸会自动计算rem值 width == 37.5rem
 // fontSize 不必使用rem 尺寸大了反而不好，还是使用px
+<<<<<<< HEAD
 
+=======
+//
+//
+>>>>>>> 484059e54a91cd2c07107bf242efd2a20e958927
 ;(function(win, lib) {
     var doc = win.document;
     var docEl = doc.documentElement;
