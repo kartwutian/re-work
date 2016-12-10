@@ -1,0 +1,313 @@
+@charset "utf8";
+
+//初始化
+.reset(){
+  html,body{
+  margin: 0;
+  height: 100%;
+  }
+
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    // font-size: 12px;//flexble中有定义
+    line-height: 1.6;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+  }
+
+  body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,button,textarea,p {
+    margin:0; padding:0; 
+    font:inherit;
+  }
+
+  * {
+    tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -ms-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="checkbox"],
+  textarea,select {
+    -webkit-appearance:none;
+  }
+
+  ul,li{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+    color:inherit;
+  }
+  img{
+    border: none;
+  }
+}
+
+// **
+// * font-face 自定义字体
+// * @params        @path: 字体路径; @font-name: 字体名字; 需要同时存在eot woff ttf svg
+// **/
+.font-face(@path,@font-name){
+  @font-face{
+    font-family: @font-name;
+    src: url('@{path}@{font-name}.eot'); /* IE9 Compat Modes */
+    src: url('@{path}@{font-name}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('@{path}@{font-name}.woff') format('woff'), /* Modern Browsers */
+         url('@{path}@{font-name}.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('@{path}@{font-name}.svg#@{font-name}') format('svg'); /* Legacy iOS */
+  }
+}
+//定义字体图标
+.iconfont(){
+  [class^="think-iconfont-"],
+  [class*=" think-iconfont-"]{
+    position: relative;
+  }
+  [class^="think-iconfont-"]:before,/*属性过滤选择器+伪元素选择器*/
+  [class*=" think-iconfont-"]:before{/*属性过滤选择器+伪元素选择器*/
+    position: absolute;
+    color: inherit;
+    font-family: "iconfont";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    /* opacity: .8; */
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: inherit;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+  .think-iconfont-address:before{
+    content:"\e605";
+    }
+  .think-iconfont-help:before{
+    content:"\e601";  
+    }
+  .think-iconfont-infinit:before{
+    content:"\e604";
+    }
+  .think-iconfont-paper-airplane:before{
+    content:"\e603";
+    }
+  .think-iconfont-person:before{
+    content:"\e606";
+    }
+  .think-iconfont-heart:before{
+    content:"\e600";
+    }
+  .think-iconfont-aperture:before{
+    content:"\e602";
+    }
+  .think-iconfont-arrow:before{
+    content:"\e607";
+    }
+  .think-iconfont-arrow-left:before{
+    content:"\e60a";
+    }
+  .think-iconfont-arrow-right:before{
+    content:"\e60b";
+    }
+  .think-iconfont-xiangzuo:before{
+    content:"\e60e";
+    }
+  .think-iconfont-xiangyou:before{
+    content:"\e611";
+    }
+  .think-iconfont-person-stalker:before{
+    content:"\e608";
+    }
+  .think-iconfont-phone:before{
+    content:"\e609";
+    }
+  .think-iconfont-social-yen:before{
+    content:"\e613";
+    }
+  .think-iconfont-email:before{
+    content:"\e614";
+    }
+  .think-iconfont-ios-people:before{
+    content:"\e612";
+    }
+  .think-iconfont-qiandai:before{
+    content:"\e616";
+    }
+  .think-iconfont-list:before{
+    content:"\e618";
+    }
+  .think-iconfont-statistic:before{
+    content:"\e617";
+    }
+  .think-iconfont-eye:before{
+    content:"\e619";
+    }
+  .think-iconfont-tongji:before{
+    content: "\e615";
+  }
+  .think-iconfont-qq:before{
+    content:"\e61b";
+    }
+  .think-iconfont-wx:before{
+    content:"\e61a";
+    }
+
+}
+
+//flex
+.flex() {
+  display: -webkit-box;
+  display: flex;
+  display: -webkit-flex;
+}
+.flex_item() {
+  -webkit-box-flex: 1;
+  flex: 1;
+  -webkit-flex: 1;
+}
+//不同dpr下定义相同真实物理像素,默认1px
+.physical_px(@attr,@px:1px){
+
+  [device-dpr="1"] &{
+    @{attr}:@px;
+    }
+
+  [device-dpr="2"] & {
+    @{attr}: @px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+  }
+
+  [device-dpr="3"] & {
+    @{attr}: @px;
+    -webkit-transform: scaleY(0.333333);
+    transform: scaleY(0.333333);
+    -webkit-transform-origin: 0 0;
+  }
+}
+//纵向分隔线
+.separator_lineY(@left:0,@right:0,@bg_color:rgba(255,255,255,.2)){
+
+  position: relative;
+
+  &:after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: @left;
+    right: @right;
+    background-color: @bg_color;
+    .physical_px(height);
+  }
+
+}
+//横向分隔线
+.separator_lineX(@top:0,@bottom:0,@bg_color:rgba(255,255,255,.2)){
+
+  position: relative;
+
+  &:after{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: @top;
+    bottom: @bottom;
+    background-color: @bg_color;
+    .physical_px(width);
+  }
+
+}
+//设置边框，true为直接，false为伪元素
+.border(true,@border_width,@border_style:solid,@border_color:#666,@border-radius:0.266667rem){
+  border:  @border_width @border_style @border_color;
+  border-radius: @border-radius;
+}
+
+.border(false,@border_width,@border_style:solid,@border_color:#666,@border-radius:0.266667rem){
+    position: relative;
+    [device-dpr="1"] & {
+        &:after{
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border:  @border_width @border_style @border_color;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          box-sizing: border-box;
+          border-radius: @border-radius;
+        }
+    }
+
+    [device-dpr="2"] & {
+        &:after{
+          content: "";
+          width: 200%;
+          height: 200%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border:  @border_width @border_style @border_color;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          box-sizing: border-box;
+          border-radius: @border-radius;
+        }
+    }
+
+    [device-dpr="3"] & {
+        &:after{
+          content: "";
+          width: 300%;
+          height: 300%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border:  @border_width @border_style @border_color;
+          -webkit-transform: scale(0.333333);
+          transform: scale(0.333333);
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          box-sizing: border-box;
+          border-radius: @border-radius;
+        }
+    }
+}
+
+.ellipsis(){
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
