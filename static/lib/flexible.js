@@ -1,6 +1,6 @@
 // 移动端自适应方案，rem+flexbox
 // 1rem == 10px iphone6下，其他尺寸会自动计算rem值 width == 37.5rem
-// fontSize 不必使用rem 尺寸大了反而不好，body上设置默认fontSize，之后的元素使用em控制
+// fontSize 不必使用rem 尺寸大了反而不好，body上设置默认fontSize，之后的元素下的字体大小使用em控制，以便全局控制
 
 
 ;(function(win, lib) {
