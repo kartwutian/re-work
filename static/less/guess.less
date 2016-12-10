@@ -1,0 +1,417 @@
+html,body{
+  height: 100%;
+}
+body{
+  background: url(../images/test.jpg) no-repeat;
+  background-size: 100% 100%; 
+  /*background-color: #f00*/
+}
+.text-highlight{
+  color: #d9f504;
+}
+.text-red{
+  color: #db3652;
+}
+.text-gray{
+  color: #666;
+}
+.text-blue{
+  color: #0079fe;
+}
+.text-dark{
+  color: #333;
+}
+.text-white{
+  color: #fff;
+}
+
+.bhz-ico{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.bhz-ico-gold-peas {
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/gold-peas.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  margin-right: 5px;
+}
+.bhz-ico-cry {
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/cry.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  margin-right: 5px;
+}
+.bhz-ico-icon-records {
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/icon-records.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  margin-right: 5px;
+}
+.bhz-ico-icon-rules {
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/icon-rules.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  margin-right: 5px;
+}
+.bhz-ico-icon-trophy {
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/icon-trophy.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  margin-right: 5px;
+}
+
+.bhz-mod-header-fixed{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  line-height: 44px;
+  height: 44px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  background: #f7f7f7;
+}
+.bhz-mod-header-transparent{
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.bhz-mod-header-fixed>.bmh-fixed-left{
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  height: 100%;
+
+  
+}
+.bhz-mod-header-fixed>.bmh-fixed-right{
+  display:inline-block;
+  position: absolute;
+  right: 10px;
+
+}
+.bhz-mod-header-fixed>.bmh-fixed-right>.bmh-fixed-right-1,
+.bhz-mod-header-fixed>.bmh-fixed-right>.bmh-fixed-right-2{
+  display:inline-block;
+}
+.bhz-mod-header-fixed>.bmh-fixed-right>.bmh-fixed-right-1{
+  margin-right: 5px;
+}
+
+.bhz-mod-shadow{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 100;
+}
+.bhz-mod-shadow-02{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.bhz-mod-bottom{
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  overflow: auto;
+  z-index: 200;
+  background-color: #fff;
+  opacity: 0;
+}
+.bhz-mod-rules{
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  overflow: auto;
+  z-index: 200;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.bhz-mod-bottom-item{
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+}
+.bhz-mod-bottom-item>.bmb-item-header{
+  position: relative;
+  line-height: 40px;
+  border-bottom: 1px dashed #ccc;
+}
+.bhz-mod-bottom-item>.bmb-item-header>.bmb-item-header-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bhz-mod-bottom-item>.bmb-item-body{
+  position: relative;
+  line-height: 40px;
+  
+}
+.bhz-mod-bottom-item>.bmb-item-body>.bmb-item-body-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bhz-mod-more{
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+#top-area{
+  height: 100px;
+}
+.bhz-mod-container{
+  width: 300px;
+  font-size: 0;
+  margin: 0 auto;
+}
+.bhz-mod-flop{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  width: 160px;
+  height: 240px;
+  margin: 0 70px;
+  /*border: 1px solid red;*/
+  border-radius: 5px;
+  perspective: 1000px;
+}
+.bhz-mod-flop>.bhz-mod-flop-info{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 2px 20px rgba(0,0,0,.5);
+  border-radius: 5px;
+
+  transition: all 1s ease; 
+  transform-style: preserve-3d; 
+  backface-visibility: hidden;
+}
+.bhz-mod-flop>.bhz-mod-flop-info.front{
+  z-index: 1;
+  background: url(../images/puke-front.jpg) no-repeat;
+  background-size: 100%;
+}
+.bhz-mod-flop>.bhz-mod-flop-info.back{
+  z-index: 2;
+  transform:rotateY(180deg);
+  background: url(../images/puke/puke-k.jpg) no-repeat;
+  background-size: 100%;
+}
+.bhz-mod-flop>.bhz-mod-flop-info.back>.bmf-info-tip{
+  color: #ddf71a;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  left: 50px;
+  top: -13%;
+  text-align: center;
+  transform: translateY(-50%);
+  border-radius: 100%; 
+  font-size: 20px;
+}
+.bhz-mod-flop>.bhz-mod-flop-info.front>.bmf-info-common{
+  color: #fff;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  left: 50px;
+  text-align: center;
+  background-color: rgb(0,214,166);
+  border-radius: 100%; 
+  box-shadow: 0 0 10px rgb(0,214,166);
+  font-size: 20px;
+}
+.bhz-mod-flop>.bhz-mod-flop-info.front>.bmf-info-common.selected{
+  background-color: #db3652;
+}   
+.bhz-mod-flop>.bhz-mod-flop-info.front>.bmf-info-large{
+  top: 10px;
+}
+   
+.bhz-mod-flop>.bhz-mod-flop-info.front>.bmf-info-middle{
+  top: 90px;
+}
+.bhz-mod-flop>.bhz-mod-flop-info.front>.bmf-info-small{
+  top: 170px;
+}
+
+
+.bhz-mod-flop.rotate .bhz-mod-flop-info.front{
+  z-index: 2;
+  transform:rotateY(180deg);
+}
+.bhz-mod-flop.rotate .bhz-mod-flop-info.back{
+  z-index: 1;
+  transform:rotateY(0deg);
+}
+
+.bhz-mod-betted{
+  text-align: center;
+  line-height: 40px;
+}
+.bhz-mod-betted>.bhz-mod-betted-num{
+
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  
+  border-radius: 50%;
+  text-align: center;
+  color: #f00;
+  box-shadow: 0px 0px 2px rgba(255,255,0,0.5);
+}
+
+.bhz-mod-bet{
+  text-align: center;
+}
+.bhz-mod-bet>.bhz-mod-bet-num{
+  display: inline-block;
+  margin-top: 60px;
+  margin-left: 10px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;        
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 0px 2px rgba(255,255,0,0.5);
+}
+.bhz-mod-bet-num.clicked{
+  width: 45px;
+  height: 45px;
+  line-height: 45px;     
+}
+.bhz-mod-bet-num.btn-style-0{
+  background-color: rgb(0,214,166);
+}
+.bhz-mod-bet-num.btn-style-1{
+  background-color: rgb(0,204,236);
+}
+.bhz-mod-bet-num.btn-style-2{
+  background-color: rgb(255,190,0);
+}
+.bhz-mod-bet-num.btn-style-3{
+  background-color: rgb(255,126,0);
+}
+.bhz-mod-bet-num.btn-style-4{
+  background-color: #b04cc3;
+}
+.bhz-mod-bet-btn{
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;        
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 0px 2px rgba(255,255,0,0.5);
+  background-color: #db3652;
+}
+
+.bhz-mod-result{
+  text-align: center;
+}
+.bhz-mod-result>.bhz-mod-result-wrap{
+
+  width: 60%;
+  margin: 0 auto;
+  font-size: 0;
+}
+.bhz-mod-result>.bhz-mod-result-wrap>.bmr-wrap-item{
+  display: inline-block;
+  width: 33%;
+  font-size: 14px;
+  text-align: center;
+  background: #999;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.bhz-mod-result>.bhz-mod-result-wrap>.bmr-wrap-item.selected{
+  
+  background-color: #db3652;
+}
+
+.bhz-mod-tip-00{
+  position: absolute;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(255,255,255,0.5);
+  color: rgba(255,0,0,1);
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  border-radius: 10px;
+  z-index: 200;
+}
+.bhz-mod-tip-01{
+  position: absolute;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(60, 212, 133, 0.5);
+  color: rgba(255,0,0,1);
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border-radius: 10px;
+  z-index: 200;
+}
+.bhz-mod-tip-02{
+  position: absolute;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(60, 212, 133, 0.5);
+  color: rgba(255,0,0,1);
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border-radius: 10px;
+  z-index: 200;
+}

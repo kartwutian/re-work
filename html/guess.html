@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>翻牌猜大小</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="">
+  <meta name="Keywords" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/guess.css">
+  <script src="../static/lib/jquery.1.8.3.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+  <header class="bhz-mod-header-fixed bhz-mod-header-transparent">
+    <div class="bmh-fixed-left text-white">
+      <i class="bhz-ico bhz-ico-gold-peas"></i>爱豆
+      <span class="text-red">1256</span>
+    </div>
+    <div class="bmh-fixed-right text-white">
+      <div id="my-records-btn" class="bmh-fixed-right-1">
+        <i class="bhz-ico bhz-ico-icon-records"></i>我的记录</div>
+      <div id="game-rules-btn" class="bmh-fixed-right-2">
+        <i class="bhz-ico bhz-ico-icon-rules"></i>规则</div>
+    </div>
+  </header>
+  <section id="my-records" style="display:none" class="bhz-mod-bottom">
+    <section class="bhz-mod-bottom-item">
+      <div class="bmb-item-header">
+        <div class="bmb-item-header-left">2016-12-10 12:12:36</div>
+        <div class="bmb-item-header-right">共投
+          <span class="bmb-num">100</span>爱豆</div>
+      </div>
+      <div class="bmb-item-body">
+        <div class="bmb-item-body-left">开奖结果</div>
+        <div class="bmb-item-body-right">
+          <span class="bmb-result-fail">未中奖</span>
+        </div>
+      </div>
+    </section>
+    <section class="bhz-mod-bottom-item">
+      <div class="bmb-item-header">
+        <div class="bmb-item-header-left">2016-12-10 12:12:36</div>
+        <div class="bmb-item-header-right">共投
+          <span class="bmb-num">100</span>爱豆</div>
+      </div>
+      <div class="bmb-item-body">
+        <div class="bmb-item-body-left">开奖结果</div>
+        <div class="bmb-item-body-right">
+          <div class="bmb-result-win text-red">
+            <i class="bhz-ico bhz-ico-icon-trophy"></i> 共中
+            <span class="bmb-win-num">200</span>爱豆</div>
+        </div>
+      </div>
+    </section>
+    <section class="bhz-mod-bottom-item">
+      <div class="bmb-item-header">
+        <div class="bmb-item-header-left">2016-12-10 12:12:36</div>
+        <div class="bmb-item-header-right">共投
+          <span class="bmb-num">100</span>爱豆</div>
+      </div>
+      <div class="bmb-item-body">
+        <div class="bmb-item-body-left">开奖结果</div>
+        <div class="bmb-item-body-right">
+          <span class="bmb-result-fail">未中奖</span>
+        </div>
+      </div>
+    </section>
+    <section class="bhz-mod-bottom-item">
+      <div class="bmb-item-header">
+        <div class="bmb-item-header-left">2016-12-10 12:12:36</div>
+        <div class="bmb-item-header-right">共投
+          <span class="bmb-num">100</span>爱豆</div>
+      </div>
+      <div class="bmb-item-body">
+        <div class="bmb-item-body-left">开奖结果</div>
+        <div class="bmb-item-body-right">
+          <div class="bmb-result-win text-red">
+            <i class="bhz-ico bhz-ico-icon-trophy"></i> 共中
+            <span class="bmb-win-num">200</span>爱豆</div>
+        </div>
+      </div>
+    </section>
+    <section class="bhz-mod-bottom-item">
+      <div class="bmb-item-header">
+        <div class="bmb-item-header-left">2016-12-10 12:12:36</div>
+        <div class="bmb-item-header-right">共投
+          <span class="bmb-num">100</span>爱豆</div>
+      </div>
+      <div class="bmb-item-body">
+        <div class="bmb-item-body-left">开奖结果</div>
+        <div class="bmb-item-body-right">
+          <span class="bmb-result-fail">未中奖</span>
+        </div>
+      </div>
+    </section>
+    <section class="bhz-mod-bottom-item">
+      <div class="bmb-item-header">
+        <div class="bmb-item-header-left">2016-12-10 12:12:36</div>
+        <div class="bmb-item-header-right">共投
+          <span class="bmb-num">100</span>爱豆</div>
+      </div>
+      <div class="bmb-item-body">
+        <div class="bmb-item-body-left">开奖结果</div>
+        <div class="bmb-item-body-right">
+          <div class="bmb-result-win text-red">
+            <i class="bhz-ico bhz-ico-icon-trophy"></i> 共中
+            <span class="bmb-win-num">200</span>爱豆</div>
+        </div>
+      </div>
+    </section>
+    <a href="javascript:;" class="bhz-mod-more text-blue">
+      <span>查看更多</span>
+    </a>
+  </section>
+  <section id="game-rules" style="display:none;" class="bhz-mod-rules">
+    <p>1.翻牌结果为1-13中的一个随机数</p>
+    <p>2.翻牌结果若为1-6中的一张牌，则开奖结果为小，赔率为1.6</p>
+    <p>3.翻牌结果若为7，则开奖结果为發，赔率为7</p>
+    <p>4.翻牌结果若为8-k中的一张牌，则开奖结果为大，赔率为1.6</p>
+  </section>
+  <div id="top-area"></div>
+  <div class="bhz-mod-container">
+    <section id="card" class="bhz-mod-flop">
+      <div class="bhz-mod-flop-info front">
+        <div class="bmf-info-common bmf-info-large selected">大</div>
+        <div class="bmf-info-common bmf-info-middle">發</div>
+        <div class="bmf-info-common bmf-info-small">小</div>
+      </div>
+      <div class="bhz-mod-flop-info back">
+        <div id="the-result" class="bmf-info-tip">大</div>
+      </div>
+    </section>
+  </div>
+  <div class="bhz-mod-bet text-red">
+    <span id="bet-btn-0" class="bhz-mod-bet-num btn-style-0 clicked">10</span>
+    <span id="bet-btn-1" class="bhz-mod-bet-num btn-style-1">50</span>
+    <span id="bet-btn-2" class="bhz-mod-bet-num btn-style-2">100</span>
+    <span id="bet-btn-3" class="bhz-mod-bet-num btn-style-3">500</span>
+    <span id="bet-btn-4" class="bhz-mod-bet-num btn-style-4">1000</span>
+    <span class="bhz-mod-bet-btn">开奖</span>
+  </div>
+  <div id="tip-01" style="display:none;" class="bhz-mod-tip-01">
+    <i class="bhz-ico bhz-ico-gold-peas"></i> +1000爱豆</div>
+  <div id="tip-02" style="display:none;" class="bhz-mod-tip-02">
+    <i class="bhz-ico bhz-ico-cry"></i> -1000爱豆</div>
+  <section style="display:none;" class="bhz-mod-shadow"></section>
+  <section id="for-tip" style="display:none;" class="bhz-mod-shadow-02"></section>
+  <script>
+    // 显示记录
+    $("#my-records-btn").on("click", function() {
+      $("section.bhz-mod-shadow").fadeIn(500);
+      $("#my-records").show().animate({
+        top: '20%',
+        opacity: 1
+      }, 500)
+    });
+    $("#game-rules-btn").on("click", function() {
+      $("section.bhz-mod-shadow").fadeIn(500);
+      $("#game-rules").show().animate({
+        top: '20%',
+        opacity: 1
+      }, 500)
+    });
+    // 隐藏记录
+    $("section.bhz-mod-shadow").on("click", function() {
+        $("section.bhz-mod-shadow").fadeOut(500);
+        $("#my-records").animate({
+          top: '100%',
+          opacity: 0
+        }, 500, function() {
+          $("#my-records").hide();
+        });
+        $("#game-rules").animate({
+          top: '100%',
+          opacity: 0
+        }, 500, function() {
+          $("#game-rules").hide();
+        });
+      })
+      // len为投注按钮数
+    var len = $(".bhz-mod-bet>.bhz-mod-bet-num").length;
+    var arrUrl = ['../static/images/puke/puke-1.jpg',
+      '../static/images/puke/puke-2.jpg',
+      '../static/images/puke/puke-3.jpg',
+      '../static/images/puke/puke-4.jpg',
+      '../static/images/puke/puke-5.jpg',
+      '../static/images/puke/puke-6.jpg',
+      '../static/images/puke/puke-7.jpg',
+      '../static/images/puke/puke-8.jpg',
+      '../static/images/puke/puke-9.jpg',
+      '../static/images/puke/puke-10.jpg',
+      '../static/images/puke/puke-j.jpg',
+      '../static/images/puke/puke-q.jpg',
+      '../static/images/puke/puke-k.jpg',
+    ];
+    var randomNum = 0;
+
+    function getRandomNum() {
+      return Math.floor(Math.random() * 13);
+    }
+    for (var i = 0; i < len; i++) {
+      $("#bet-btn-" + i).click(function() {
+        $(this).addClass("clicked").siblings().removeClass("clicked");
+      })
+    }
+    // 选大小
+    $(".bmf-info-common").click(function() {
+        $(this).addClass("selected").siblings().removeClass("selected");
+      })
+      // 开奖
+    $(".bhz-mod-bet-btn").click(function() {
+        randomNum = getRandomNum();
+        $('.bhz-mod-flop-info.back').css('background-image', 'url(' + arrUrl[randomNum] + ')');
+        // $.ajax({
+        // })
+        $('#card').addClass('rotate');
+        $("#tip-02").show().animate({
+          top: '74%'
+        }, 1000)
+        $("#for-tip").show()
+      })
+      // 重新初始化开奖
+    $("#for-tip").click(function() {
+      $('#card').removeClass('rotate');
+      $("#tip-02").css("top", "100%").hide();
+      $(this).hide();
+    })
+  </script>
+</body>
+</html>

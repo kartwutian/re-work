@@ -1,0 +1,209 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    |     
+    title 翻牌猜大小
+    |     
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    |     
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    |     
+    meta(name='format-detection', content='telephone=no')
+    |     
+    meta(name='description', content='')
+    |     
+    meta(name='Keywords', content='')
+    |     
+    meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
+    |     
+    link(rel='stylesheet', type='text/css', href='/css/global.css')
+    |     
+    link(rel='stylesheet', type='text/css', href='/css/guess.css')
+    |     
+    script(src='/lib/jquery.1.8.3.js', type='text/javascript', charset='utf-8')
+    script(src='/js/guess.js', type='text/javascript', charset='utf-8')
+  |   
+  body
+    header.bhz-mod-header-fixed.bhz-mod-header-transparent
+      .bmh-fixed-left.text-white
+        i.bhz-ico.bhz-ico-gold-peas
+        | 爱豆
+        |         
+        span#my-peas.text-highlight 1256
+      |       
+      .bmh-fixed-right.text-white
+        #my-records-btn.bmh-fixed-right-1
+          i.bhz-ico.bhz-ico-icon-records
+          | 我的记录
+        |         
+        #game-rules-btn.bmh-fixed-right-2
+          i.bhz-ico.bhz-ico-icon-rules
+          | 规则
+    |     
+    section#my-records.bhz-mod-bottom(style='display:none')
+      section.bhz-mod-bottom-item
+        .bmb-item-header
+          .bmb-item-header-left 2016-12-10 12:12:36
+          |           
+          .bmb-item-header-right
+            | 共投
+            span.bmb-num 100
+            | 爱豆
+        |         
+        .bmb-item-body
+          .bmb-item-body-left 开奖结果
+          |           
+          .bmb-item-body-right
+            span.bmb-result-fail 未中奖
+      |       
+      section.bhz-mod-bottom-item
+        .bmb-item-header
+          .bmb-item-header-left 2016-12-10 12:12:36
+          |           
+          .bmb-item-header-right
+            | 共投
+            span.bmb-num 100
+            | 爱豆
+        |         
+        .bmb-item-body
+          .bmb-item-body-left 开奖结果
+          |           
+          .bmb-item-body-right
+            .bmb-result-win.text-red
+              i.bhz-ico.bhz-ico-icon-trophy
+              |             共中
+              span.bmb-win-num 200
+              | 爱豆
+      |       
+      section.bhz-mod-bottom-item
+        .bmb-item-header
+          .bmb-item-header-left 2016-12-10 12:12:36
+          |           
+          .bmb-item-header-right
+            | 共投
+            span.bmb-num 100
+            | 爱豆
+        |         
+        .bmb-item-body
+          .bmb-item-body-left 开奖结果
+          |           
+          .bmb-item-body-right
+            span.bmb-result-fail 未中奖
+      |       
+      section.bhz-mod-bottom-item
+        .bmb-item-header
+          .bmb-item-header-left 2016-12-10 12:12:36
+          |           
+          .bmb-item-header-right
+            | 共投
+            span.bmb-num 100
+            | 爱豆
+        |         
+        .bmb-item-body
+          .bmb-item-body-left 开奖结果
+          |           
+          .bmb-item-body-right
+            .bmb-result-win.text-red
+              i.bhz-ico.bhz-ico-icon-trophy
+              |             共中
+              span.bmb-win-num 200
+              | 爱豆
+      |       
+      section.bhz-mod-bottom-item
+        .bmb-item-header
+          .bmb-item-header-left 2016-12-10 12:12:36
+          |           
+          .bmb-item-header-right
+            | 共投
+            span.bmb-num 100
+            | 爱豆
+        |         
+        .bmb-item-body
+          .bmb-item-body-left 开奖结果
+          |           
+          .bmb-item-body-right
+            span.bmb-result-fail 未中奖
+      |       
+      section.bhz-mod-bottom-item
+        .bmb-item-header
+          .bmb-item-header-left 2016-12-10 12:12:36
+          |           
+          .bmb-item-header-right
+            | 共投
+            span.bmb-num 100
+            | 爱豆
+        |         
+        .bmb-item-body
+          .bmb-item-body-left 开奖结果
+          |           
+          .bmb-item-body-right
+            .bmb-result-win.text-red
+              i.bhz-ico.bhz-ico-icon-trophy
+              |             共中
+              span.bmb-win-num 200
+              | 爱豆
+      |       
+      a.bhz-mod-more.text-blue(href='javascript:;')
+        span 查看更多
+    |     
+    section#game-rules.bhz-mod-rules(style='display:none;')
+      p
+        | 1.翻牌结果为1-13中的一个随机数
+      |       
+      p
+        | 2.翻牌结果若为1-6中的一张牌，则开奖结果为小，赔率为1.6
+      |       
+      p
+        | 3.翻牌结果若为7，则开奖结果为發，赔率为7
+      |       
+      p
+        | 4.翻牌结果若为8-k中的一张牌，则开奖结果为大，赔率为1.6
+    |     
+    |     
+    #top-area
+    |     
+    .bhz-mod-container
+      section#card.bhz-mod-flop
+        .bhz-mod-flop-info.front
+          .bmf-info-common.bmf-info-large.selected 大
+          |           
+          .bmf-info-common.bmf-info-middle 發
+          |           
+          .bmf-info-common.bmf-info-small 小
+        |         
+        .bhz-mod-flop-info.back
+          #the-result.bmf-info-tip 大
+    |     
+    .bhz-mod-bet.text-red
+      span#bet-btn-0.bhz-mod-bet-num.btn-style-0.clicked 10
+      |       
+      span#bet-btn-1.bhz-mod-bet-num.btn-style-1 50
+      |       
+      span#bet-btn-2.bhz-mod-bet-num.btn-style-2 100
+      |       
+      span#bet-btn-3.bhz-mod-bet-num.btn-style-3 500
+      |       
+      span#bet-btn-4.bhz-mod-bet-num.btn-style-4 1000
+      |       
+      span.bhz-mod-bet-btn 开奖
+    | 
+    #tip-00.bhz-mod-tip-00(style='display:none;')
+      |  开奖中，请稍后       
+    #tip-01.bhz-mod-tip-01(style='display:none;')
+      i.bhz-ico.bhz-ico-gold-peas
+      span.peasAdd
+        |      +1000
+      | 爱豆
+    |     
+    #tip-02.bhz-mod-tip-02(style='display:none;')
+      i.bhz-ico.bhz-ico-cry
+      span.peasAdd
+        | -1000
+      | 爱豆
+    |     
+    section.bhz-mod-shadow(style='display:none;')
+    |     
+    section#for-tip.bhz-mod-shadow-02(style='display:none;')
+    |     
+
