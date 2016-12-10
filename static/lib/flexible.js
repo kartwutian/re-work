@@ -53,7 +53,6 @@
 		  refreshRem();
       refreshFontSize();
 		  docEl.setAttribute('device-dpr', win.devicePixelRatio);
-      console.log(1)
 		}, 300);
 	}, false);
 
