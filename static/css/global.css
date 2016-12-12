@@ -3,134 +3,67 @@
 * 样式文件
 * By bhz
 */
+@charset "utf8";
 html,
-body,
+body {
+  margin: 0;
+  height: 100%;
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  /*禁用ios系统显示的高亮颜色*/
+  touch-callout: none;
+  -webkit-touch-callout: none;
+  /*禁用ios系统默认菜单*/
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #F5F6F9;
+  color: #333;
+}
 div,
-span,
-applet,
-object,
-iframe,
+ul,
+ol,
+li,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
 form,
-label,
+fieldset,
 legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+input,
+button,
+textarea,
+p {
   margin: 0;
   padding: 0;
+  font: inherit;
   outline: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
 }
-ol,
-ul {
-  list-style: none;
+* {
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
-a,
-u,
-s,
-i,
-em {
-  text-decoration: none;
-}
-u,
-s,
-i,
-em {
-  font-style: normal;
-}
-img {
-  border: 0;
-}
-body {
-  font: 14px/1.5 "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-  overflow-x: hidden;
-}
-a {
-  color: #333;
-}
-img {
-  border: 0;
-  width: 100%;
-  display: block;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="checkbox"],
+textarea,
+select {
+  -webkit-appearance: none;
 }
 input,
 select,
@@ -139,20 +72,20 @@ textarea {
   outline: none;
   background: none;
 }
-/*移动端*/
-body {
-  /*min-width: 320px;max-width: 640px;*/
-  margin: 0 auto;
-  background-color: #F5F6F9;
-  color: #333;
+ul,
+li {
+  list-style: none;
 }
-html,
-body {
-  -webkit-tap-highlight-color: transparent;
-  /*禁用ios系统显示的高亮颜色*/
-  -webkit-touch-callout: none;
-  /*禁用ios系统默认菜单*/
+a,
+u,
+s,
+i,
+em {
+  text-decoration: none;
+  color: inherit;
 }
-u {
-  text-decoration: underline;
+img {
+  border: none;
+  width: 100%;
+  display: block;
 }

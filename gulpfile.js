@@ -60,6 +60,7 @@ gulp.task('tohtml', function() {
 gulp.task('2html', function () { 
   gulp.src(['./origin-views/_*.jade'])
     .pipe(jade({
+      donotencode: true
       // pretty: true //不加这配置项 html会被压缩,加了之后内敛元素还是无法独占一行，所以舍弃
     }))
     .pipe(htmlBeautify({
@@ -84,7 +85,7 @@ gulp.task('2html', function () {
 // _html to jade
 gulp.task('2jade', function() {
   return gulp.src(['./origin-html/_*.html'])
-    .pipe(html2jade())
+    .pipe(html2jade({donotencode: true}))
     .pipe(gulp.dest('./origin-views'));
 });
 

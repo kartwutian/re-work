@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>goods name </title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/lib/swiper.min.css">
+    <script src="../static/lib/jquery.1.8.3.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/lib/swiper.jquery.min.js"></script>
+    
+    <style>
+    .text-white{
+      color: #fff;
+      font-size: 12px;
+    }
+    .bhz-mod-header-fixed{
+      position: fixed;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-size: 14px;
+      line-height: 44px;
+      height: 44px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      background: #f7f7f7;
+    }
+    .bhz-mod-header-transparent{
+      background-color: transparent;
+      border-bottom: none;
+    }
+
+    .bhz-mod-header-fixed>.bmh-fixed-back{
+      display: block;
+      position: absolute;
+      top: 4px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .bhz-ico{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+    }
+    .bhz-ico-arrow{
+      position: absolute;
+      width: 8px;
+      height: 12px;
+      top: 12px;
+      left: 11px;
+    }
+    .bhz-ico-arrow::before{
+      position: absolute;
+      top: 0px;
+      right: -2px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-right: 6px solid #fff;
+      content: " ";
+     
+    }      
+    .bhz-ico-arrow::after{
+      position: absolute;
+      top: 0px;
+      right: -3px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-right: 6px solid #999;
+      content: " ";
+    }
+     .bhz-mod-header-fixed>.bmh-fixed-report{
+       display: block;
+       position: absolute;
+       right: 60px;
+       top: 4px;
+       width: 36px;
+       height: 36px;
+       border-radius: 50%;
+       background-color: rgba(0,0,0,0.4);
+       font-size: 12px;
+       line-height: 36px;
+       color: #fff;
+     }
+     .bhz-mod-header-fixed>.bmh-fixed-more{
+       display: block;
+       position: absolute;
+       right: 10px;
+       top: 4px;
+       width: 36px;
+       height: 36px;
+       border-radius: 50%;
+       background-color: rgba(0,0,0,0.4);
+       
+     }
+    .bhz-ico-more{
+     display: block;
+     width: 36px;
+     height: 36px;
+     background: transparent url('img/bhz-icons.png') no-repeat 3px -147px;
+     background-size: 500%;
+    }
+
+    .bhz-mod-header-fixed>.bmh-fixed-list{
+     overflow: hidden;
+     position: absolute;
+     right: 10px;
+     top: 50px;
+     display: block;
+     background-color: rgba(0,0,0,0.4);
+     border-radius: 6px;
+    }
+    .bhz-mod-header-fixed>.bmh-fixed-list>li{
+     overflow: hidden;
+     line-height: 35px;
+     padding: 0 10px;
+     background-color: rgba(0,0,0,0.4);
+     border-bottom: 1px solid #eee;
+     
+    }
+    .bhz-mod-header-fixed>.bmh-fixed-list>li>a>i.bhz-ico.bhz-ico-index{
+       background: url('img/bhz-icons.png') no-repeat 0px -61px;
+       background-size: 600%;
+       width: 20px;
+       height: 20px;
+    }
+    .bhz-mod-header-fixed>.bmh-fixed-list>li>a>i.bhz-ico.bhz-ico-center{
+       background: url('img/bhz-icons.png') no-repeat -20px -61px;
+       background-size: 600%;
+       width: 20px;
+       height: 20px;
+    }
+
+
+
+    .bhz-goods-title{
+      background-color: #fff;
+      padding: 10px 15px 5px;
+      color: #535353;
+    }
+    
+    .text-red{
+      color: #db3652;
+    }
+    .text-gray{
+      color: #666;
+    }
+    .text-blue{
+      color: #0079fe;
+    }
+    .text-dark{
+      color: #333;
+    }
+
+    .bhz-ico-winner{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 40px;
+      height: 40px;
+      background: url(img/lucky.png) center center no-repeat;
+      background-size: 100%;
+    }
+    .bhz-mod-goods-info{
+
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting{
+      padding: 0 15px;
+      background-color: #ffffff;
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main{
+      height: 91px;
+      padding: 8px;
+      background-color: #db3652;
+      position: relative;
+
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-info{
+      color: #fff;
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-btnResult{
+      position: absolute;
+      right: 10px;
+      bottom: 33px;
+      display: block;
+      padding: 0 8px;
+      color: #fff;
+      line-height: 22px;
+      border: 1px solid #fff;
+      border-radius: 4px;
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-info>.bmw-info-sponser{
+      line-height: 24px;
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-info>.bmw-info-period{
+      line-height: 24px;
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-info>.bmw-info-countdown{
+      
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-info>.bmw-info-countdown>.bmw-info-countdown-title{
+      padding-right: 5px;
+      vertical-align: middle;
+    }
+    .bhz-mod-goods-info>.bmg-info-waiting>.bmg-info-waiting-main>.biw-main-waiting-info>.bmw-info-countdown>.bmw-info-countdown-time{
+      font-size: 18px;
+      font-weight: bold;
+      vertical-align: middle;
+      
+    }
+
+    .bhz-mod-goods-info>.bmg-info-published{
+      padding: 0 15px;
+      background-color: #fff;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner{
+      position: relative;
+      padding: 15px;
+      background-color: #fbf3f0;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record{
+      position: relative;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record>.bip-winner-record-avatar{
+      display: block;
+      position: absolute;
+
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record>.bip-winner-record-avatar>img{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record>.bip-winner-record-detail{
+      margin-left: 60px;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record>.bip-winner-record-detail>p{
+      line-height: 20px;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record>.bip-winner-record-detail>.bwr-detail-sponser
+    {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-winner>.bip-winner-record>.bip-winner-record-detail>.bwr-detail-name{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-result{
+      position: relative;
+      height: 40px;
+      line-height: 40px;
+      background-color: #db3652;
+      color: #fff;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-result>.bip-result-luckyCode{
+      padding-left: 15px;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-result>.bip-result-luckyCode>.code{
+      font-size: 18px;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+    .bhz-mod-goods-info>.bmg-info-published>.bmg-info-published-result>.bip-result-btn{
+      position: absolute;
+      right: 10px;
+      bottom: 8px;
+      display: block;
+      padding: 0 8px;
+      color: #fff;
+      line-height: 22px;
+      border: 1px solid #fff;
+      border-radius: 4px;
+    }
+
+
+    .bhz-mod-detail-more{
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+    }
+    .bhz-bar{
+      display: block;
+      position: relative;
+      overflow: hidden;
+      font-size: 16px;
+      padding: 0 10px;
+      line-height: 44px;
+      border-bottom: 1px solid #f1eeec;
+      background: #fff;
+      color: #525252;
+    }
+    .bhz-bar>.bhz-bar-text{
+      display: table-cell;
+      line-height: 1;
+      height: 44px;
+      vertical-align: middle;
+    }
+    .bhz-bar .bhz-bar-hint{
+      font-size: 12px;
+      color: #8f8f8f;
+      vertical-align: middle;
+    }
+    .bhz-bar-ext{
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+    .bhz-bar-noBorder{
+      border: none;
+    }
+
+    .bhz-ico-forward{
+      position: relative;
+      width: 8px;
+      height: 12px;
+    }
+    .bhz-ico-forward::before{
+      position: absolute;
+      top: 0px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-left: 6px solid #999;
+      content: " ";
+     
+    }      
+    .bhz-ico-forward::after{
+      position: absolute;
+      top: 0px;
+      right: -3px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-left: 6px solid #fff;
+      content: " ";
+    }
+
+    .bhz-mod-joinRecord{
+      margin-left: 28px;
+      padding: 10px 10px 0 0;
+      border-left: 1px solid #d5d5d5;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-date{
+      display: inline-block;
+      margin-left: -20px;
+      margin-bottom: 15px;
+      padding: 0 5px;
+      font-size: 10px;
+      line-height: 15px;
+      background: #f4f4f4;
+      border-radius: 15px;
+      border: 1px solid #d5d5d5;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-item{
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-item>.bmj-item-avatar{
+      position: absolute;
+      left: -20px;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-item>.bmj-item-avatar>img{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-item>.bmj-item-info{
+      margin-left: 20px;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-item>.bmj-item-info>p{
+      white-space: normal;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+    .bhz-mod-joinRecord .bhz-mod-joinRecord-item>.bmj-item-info>p>span{
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+    .endTip{
+      text-align: center;
+      line-height: 40px;
+    }
+    
+    .bhz-mod-progress>.bhz-mod-progress-wrap{
+      position: relative;
+      margin: 10px 5px;
+      height: 4px;
+      background: #e6e6e6;
+      border-radius: 4px;
+
+    }
+    .bhz-mod-progress>.bhz-mod-progress-wrap>.bmp-wrap-color{
+      overflow: hidden;
+      max-width: 100%;
+      width: 0%;
+      height: 4px;
+      background: #fdb31c;
+      border-radius: 4px
+    }
+    .bhz-mod-progress>.bhz-mod-progress-wrap>.bmp-wrap-tip{
+      position: absolute;
+      top: -6px;
+      display: inline-block;
+      height: 16px;
+      background-color: #FDB476;
+      color: #fff;
+      border-radius: 10px;
+      left: 0%;
+    }
+    .bhz-mod-status{
+      padding: 10px;
+      background-color: #fff;
+    }
+    .bhz-mod-status>.bhz-mod-status-list{
+      display: -webkit-box;
+      display: flex;
+      display: -webkit-flex;
+      text-align: center;
+
+    }
+
+    .bhz-mod-status .bms-info-sponser{
+      line-height: 25px;
+
+    }
+    .bhz-mod-status .bms-info-period{
+      line-height: 25px;
+
+    }
+    .bhz-mod-status>.bhz-mod-status-info{
+      margin-top: 15px;
+      display: -webkit-box;
+      display: flex;
+      display: -webkit-flex;
+    }
+    .bhz-mod-status>.bhz-mod-status-info>p{
+      -webkit-box-flex: 1;
+      flex: 1;
+      -webkit-flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .bhz-mod-status>.bhz-mod-status-list>.bms-list-item{
+      -webkit-box-flex: 1;
+      flex: 1;
+      -webkit-flex: 1;
+      border-right: 1px solid #eee;
+
+    }
+
+    .bhz-mod-status>.bhz-mod-status-list>.bms-list-item:last-child{       
+      border-right: none;
+    }
+    </style>
+  
+  </head>
+
+  <body>
+    <header class="bhz-mod-header-fixed bhz-mod-header-transparent">
+      <a class="bmh-fixed-back" href="javascript:;" onclick="history.back()">
+        <i class="bhz-ico bhz-ico-arrow"></i>
+      </a>
+      <a class="bmh-fixed-report" href="javascript:;">
+        举报
+      </a>
+      <a class="bmh-fixed-more" href="javascript:;">
+        <i class="bhz-ico-more"></i>
+      </a>
+      <ul class="bmh-fixed-list" style="display: none;">
+        <li>
+          <a href="http://www.baidu.com">
+            <i class="bhz-ico bhz-ico-index"></i>
+            <span class="text-white">返回首页</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript">
+            <i class="bhz-ico bhz-ico-center"></i>
+            <span class="text-white">会员中心</span>
+          </a>
+        </li>
+      </ul>
+    </header>
+    <section class="bhz-mod-gallery">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://onegoods.nosdn.127.net/goods/2492/f6a05c4d22353a9a224d971866ea28b5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://onegoods.nosdn.127.net/goods/2492/231defcecf76bf680ecc66c9ddd0f337.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://onegoods.nosdn.127.net/goods/2492/f780e883ebce7b7952d613a15d5ec731.jpg" alt="">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+        
+        <!-- 如果需要滚动条 -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+    </section>
+    <p class="bhz-goods-title">
+      <span class="bhz-goods-title-name">iPhone7 128GB</span>
+      <span class="bhz-goods-title-desc text-red"> iPhone7 如7而至！颜色随机。</span>
+    </p>
+
+    <section class="bhz-mod-status">
+      <section class="bhz-mod-progress">
+        <div class="bhz-mod-progress-wrap">
+          <div id="progress-bar" class="bmp-wrap-color" style="width:25%;"></div>
+          <div id="progress-num" class="bmp-wrap-tip" style="left:25%;">25%</div>
+        </div>
+      </section>
+      
+      <ul class="bhz-mod-status-list text-gray">
+        
+        <li class="bms-list-item">
+          <div id="total-times">5120</div>
+          <span>总需次数</span>
+        </li>
+        <li class="bms-list-item">
+          <div id="remain-times" class="text-red">120</div>
+          <span>剩余次数</span>
+        </li>
+        <li class="bms-list-item">
+          <div id="support-times">5120</div>
+          <span>支持次数</span>
+        </li>
+      </ul>
+      <div class="bhz-mod-status-info">
+        <p class="bms-info-sponser text-gray">
+        发起单位：<a class="text-blue" href="javascript">赛格电脑城我乐呵</a>
+        </p>
+        <p class="bms-info-period text-gray">
+          商品期号：<a class="text-blue" href="javascript">311070534</a>
+        </p>
+      </div>
+      
+    </section>
+
+    <div class="bhz-mod-goods-info" id="goodsInfo" style="display:none">
+      <div class="bmg-info-waiting" id="detailWaiting">
+        <div class="bmg-info-waiting-main">
+            <div class="biw-main-waiting-info">
+                <p class="bmw-info-sponser">
+                  <span>发起单位：</span>赛格电脑城
+                </p>
+                <p class="bmw-info-period">期号：311040864</p>
+                <div class="bmw-info-countdown">
+                    <span class="bmw-info-countdown-title">揭晓倒计时</span>
+                    <span class="bmw-info-countdown-time">
+                      <b>0</b>
+                      <b>0</b>:
+                      <b>0</b>
+                      <b>0</b>:
+                      <b>0</b>
+                      <b>0</b>
+                    </span>
+                </div>
+            </div>
+            <a class="biw-main-waiting-btnResult" href="calculate.html" >计算详情</a>
+        </div>
+      </div>
+      <div class="bmg-info-published"  style="display:none">
+        <div class="bmg-info-published-winner">
+          <i class="bhz-ico bhz-ico-winner"></i>
+          <div class="bip-winner-record">
+            <a class="bip-winner-record-avatar" href="javascript:;">
+              <img src="http://nos.netease.com/mail-userthumb/84faf7dcc84d0437579dab77c35ecd5d_90.jpeg">
+            </a>
+            <div class="bip-winner-record-detail text-gray">
+              <p class="bwr-detail-sponser">发起单位：
+                <a href="/user/index.do?cid=64747383" class="text-blue">赛格电脑城</a>
+              </p>
+              <p class="bwr-detail-name">获得者：
+                <a href="/user/index.do?cid=64747383" class="text-blue">飞飞飞飞飞飞飞飞飞飞飞飞飞飞飞飞哥中大奖咯</a>
+              </p>
+              <p class="bwr-detail-location">用户IP：106.121.5.74 (北京)</p>
+              <p>期号：311040877</p>
+              <p>用户ID：64747383 (唯一不变标识)</p>
+              <p>本期参与：<strong class="text-red">20</strong>人次</p>
+              <p>揭晓时间：2016-11-04 16:54:00.482</p>
+            </div>
+          </div>
+        </div>
+        <div class="bmg-info-published-result">
+          <span class="bip-result-luckyCode">
+            幸运号码：<span class="code">10000101</span>
+          </span>
+          <a class="bip-result-btn" href="javascript:;">计算详情</a>
+        </div>
+      </div>
+    </div>
+    <div class="bhz-mod-detail-more">
+      <a href="javascript:;" class="bhz-bar">
+        <div class="bhz-bar-text">图文详情 
+          <span class="bhz-bar-hint">( 建议在wifi下查看 )</span>
+        </div>
+        
+        <div class="bhz-bar-ext">
+          <i class="bhz-ico bhz-ico-forward"></i>
+        </div>
+      </a>
+      <a href="winRecord.html" class="bhz-bar">
+        <div class="bhz-bar-text">往期揭晓</div>
+        <div class="bhz-bar-ext">
+          <i class="bhz-ico bhz-ico-forward"></i>
+        </div>
+      </a>
+      <a href="shareIndex.html" class="bhz-bar bhz-bar-noBorder">
+        <div class="bhz-bar-text">晒单分享</div>
+        <div class="bhz-bar-ext">
+          <i class="bhz-ico bhz-ico-forward"></i>
+        </div>
+      </a>
+    </div>
+    <div class="bhz-bar">
+      所有参与记录<span class="bhz-bar-hint">( 自2016-11-05 15:18:01开始 )</span>
+    </div>
+    <section class="bhz-mod-joinRecord">
+      <div class="bhz-mod-joinRecord-date">
+        2016-11-05  
+      </div>
+      <ul>
+        <li class="bhz-mod-joinRecord-item">
+          <div class="bmj-item-avatar">
+            <img src="http://nos.netease.com/mail-userthumb/9af09ce583c5d16c88346878e4d06e6e_40.jpeg" alt="">
+          </div>
+          <div class="bmj-item-info text-gray">
+            <p>
+              <a class="text-blue" href="javascript:;">坑了二十万媳妇都跑了</a>
+              <span>(杭州 IP：36.111.131.102)</span>
+            </p>
+            <p>
+              <span>参与了<span class="text-red">1</span>人次</span>&nbsp;&nbsp;
+               2016-11-05 11:22:27.395
+            </p>
+          </div>
+        </li>
+        <li class="bhz-mod-joinRecord-item">
+          <div class="bmj-item-avatar">
+            <img src="http://nos.netease.com/mail-userthumb/9af09ce583c5d16c88346878e4d06e6e_40.jpeg" alt="">
+          </div>
+          <div class="bmj-item-info text-gray">
+            <p>
+              <a class="text-blue" href="javascript:;">坑了二十万媳妇都跑了</a>
+              <span>(杭州 IP：36.111.131.102)</span>
+            </p>
+            <p>
+              <span>参与了<span class="text-red">1</span>人次</span>&nbsp;&nbsp;
+               2016-11-05 11:22:27.395
+            </p>
+          </div>
+        </li>
+        <li class="bhz-mod-joinRecord-item">
+          <div class="bmj-item-avatar">
+            <img src="http://nos.netease.com/mail-userthumb/9af09ce583c5d16c88346878e4d06e6e_40.jpeg" alt="">
+          </div>
+          <div class="bmj-item-info text-gray">
+            <p>
+              <a class="text-blue" href="javascript:;">坑了二十万媳妇都跑了</a>
+              <span>(杭州 IP：36.111.131.102)</span>
+            </p>
+            <p>
+              <span>参与了<span class="text-red">1</span>人次</span>&nbsp;&nbsp;
+               2016-11-05 11:22:27.395
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <p class="endTip text-gray">已经没有更多了</p>
+    <script>
+
+      // 实现显示隐藏导航菜单
+      
+      $(".bmh-fixed-more").click(function(e){
+        e.stopPropagation();
+        $(".bmh-fixed-list").show();
+      });
+      $("html").click(function(){
+        $(".bmh-fixed-list").hide();
+      });
+
+
+      // 实现图片滑动
+      var mySwiper = new Swiper ('.swiper-container', {
+         direction: 'horizontal',
+         loop: false,
+         autoplay: 0,
+
+         
+         // 如果需要分页器
+         pagination: '.swiper-pagination',
+         
+         // 如果需要前进后退按钮
+         // nextButton: '.swiper-button-next',
+         // prevButton: '.swiper-button-prev',
+         
+         // 如果需要滚动条
+         // scrollbar: '.swiper-scrollbar'
+       });  
+
+      // 实现进度条;
+      
+      var progress = parseInt(parseInt($("#support-times").text())/parseInt($("#total-times").text())*100);
+      
+      $("#remain-times").text(parseInt($("#total-times").text()) - parseInt($("#support-times").text()));//自动计算剩余支持次数
+      $("#progress-bar").css('width',progress+'%');
+      $("#progress-num").css('left',progress+'%').text(progress+'%');
+      if(progress == 100){
+        $(".bhz-mod-status").hide();
+        $(".bhz-mod-goods-info").show();
+      }
+
+      
+      // 实现倒计时
+      var countdownData = {
+        timer:'',
+        endTime: new Date().getTime()+5*60*1000,
+        data: []
+      } ;
+
+      function toDouble(num){
+        if (num >= 10){
+          return ''+num
+        }else{
+          return "0"+num;
+        }
+
+      }
+
+      function getRunTime(){
+        
+        var nowTime = new Date();
+        var t = countdownData.endTime - nowTime.getTime();
+
+        if(t > 0){
+          var minutes = toDouble(Math.floor(t/1000/60));
+          var seconds = toDouble(Math.floor(t/1000%60));
+          var milliseconds = Math.floor(t%1000);
+          var millisecondsTo = toDouble(parseInt(milliseconds/10)); 
+          var str = minutes + seconds + millisecondsTo;
+          countdownData.data = str.split('');
+          for(var i = 0,len = countdownData.data.length; i < len; i++ ){
+            $(".bmw-info-countdown-time>b:eq("+i+")").html(countdownData.data[i]);
+            
+          }
+          
+          
+        }else{
+          clearInterval(countdownData.timer);
+          $(".bmg-info-published").show();
+          $(".bmg-info-waiting").hide();
+        }
+      };
+      countdownData.timer = setInterval(getRunTime,30);
+    </script>
+  </body>
+
+</html>

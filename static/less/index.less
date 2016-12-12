@@ -1,0 +1,44 @@
+@charset "utf8";
+
+//引入变量库
+@import "v.less";
+.header_nav{
+  .flex();
+  .nav-main{
+    flex:9;
+    .flex();
+    // flex-direction: column;
+    justify-content: left;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  .nav-right{
+    flex:1;
+    height: 0.42rem;
+    line-height: 0.42rem;
+    text-align: center;
+    position: relative;
+    &:before{
+      content: "";
+      width: .06rem;
+      height: .42rem;
+      position: absolute;
+      left: -6px;
+      top: 0;
+      background-image: radial-gradient(ellipse at right, rgba(0,0,0,0.4) 0, rgba(0,0,0,0) 50%);
+    }
+  }
+}
+
+.header_nav a {
+  .flex_item();
+  flex-shrink: 0;
+  // border: 1px solid #d00;  
+  display: inline-block;
+  text-align: center;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  margin: 0 5px;
+
+}
+.color();

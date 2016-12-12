@@ -1,69 +1,11 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
-img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, 
-center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
-tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, 
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video{
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-ol, ul {
-  list-style: none;
-}
-a, u, s, i,em{
-  text-decoration: none;
-}
-u, s, i,em {
-  font-style: normal;
-}
-img {
-  border: 0;
-}
-body{
-  font: 14px/1.5 "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
-  overflow-x: hidden;
-}
-a {
-  color: #333;
-}
-img {
-  border: 0;
-  width: 100%;
-  display: block;
-}
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
-input, select ,textarea{
-  border: none;
-  outline: none;
-  background: none;
-}
+@charset "utf8";
 
-/*移动端*/
-body{
-  /*min-width: 320px;max-width: 640px;*/
-  margin: 0 auto;
-  background-color: #F5F6F9;
-  color: #333;
-}
-// *{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;/*设置过width或height ,padding不会影响width或height*/}
-html,body{
--webkit-tap-highlight-color: transparent;/*禁用ios系统显示的高亮颜色*/
--webkit-touch-callout: none;/*禁用ios系统默认菜单*/
-}
+//引入变量库
+@import "v.less";
 
-u{
-  text-decoration: underline;
-}
-
+//初始化
+.reset();
 
 
 

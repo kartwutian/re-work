@@ -1,26 +1,24 @@
 // 移动端自适应方案，rem+flexbox
-// 1rem == 10px iphone6下，其他尺寸会自动计算rem值 width == 37.5rem
+// 1rem == 10px iphone6下，其他尺寸会自动计算rem值 width == 3.75rem
 // fontSize 不必使用rem 尺寸大了反而不好，body上设置默认fontSize，之后的元素下的字体大小使用em控制，以便全局控制
 
 
 ;(function(win, lib) {
 	var doc = win.document;
 	var docEl = doc.documentElement;
-	var metaEl = doc.querySelector('meta[name="viewport"]');
 	var dpr = win.devicePixelRatio;
-	
 	var tid; //定时器
 	var flexible = lib.flexible || (lib.flexible = {});
 	
 	
 
-	// 刷新rem ，以iphone6的width375px为基准 1rem == 10px ，
+	// 刷新rem ，以iphone6的width375px为基准 1rem == 100px ，
 	function refreshRem(){
 		var deviceWidth = docEl.getBoundingClientRect().width;
 		if (deviceWidth / dpr > 540) {
 			deviceWidth = 540 * dpr;
 		}
-		var rem = deviceWidth / 37.5;
+		var rem = deviceWidth / 3.75;
 		docEl.style.fontSize = rem + 'px';
 		flexible.rem = win.rem = rem;
 	}

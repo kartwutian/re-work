@@ -103,7 +103,7 @@ $(function(){
       $.ajax({
         type: 'POST',
         data: {userChoose:$(".bmf-info-common.selected").text(),peasNum: $(".bhz-mod-bet-num.clicked").text()-0},
-        url: 'http://192.168.158.104:3000/guess/result',
+        url: 'http://localhost:3000/guess/result',
         cache: false,
         timeout: 5000,
         success: function(data){

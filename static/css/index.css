@@ -1,0 +1,66 @@
+/** 
+* my-workflow0.0.0 
+* 样式文件
+* By bhz
+*/
+@charset "utf8";
+.header_nav {
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+}
+.header_nav .nav-main {
+  -ms-flex: 9;
+      flex: 9;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -ms-flex-pack: left;
+      justify-content: left;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.header_nav .nav-right {
+  -ms-flex: 1;
+      flex: 1;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  text-align: center;
+  position: relative;
+}
+.header_nav .nav-right:before {
+  content: "";
+  width: .06rem;
+  height: .42rem;
+  position: absolute;
+  left: -6px;
+  top: 0;
+  background-image: radial-gradient(ellipse at right, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0) 50%);
+}
+.header_nav a {
+  -ms-flex: 1;
+      flex: 1;
+  -webkit-flex: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: inline-block;
+  text-align: center;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  margin: 0 5px;
+}
+.text-red {
+  color: #db3652;
+}
+.text-gray {
+  color: #666;
+}
+.text-blue {
+  color: #0079fe;
+}
+.text-dark {
+  color: #333;
+}
+.text-white {
+  color: #fff;
+}
