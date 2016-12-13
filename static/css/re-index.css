@@ -1,0 +1,263 @@
+/** 
+* my-workflow0.0.0 
+* 样式文件
+* By bhz
+*/
+@charset "utf8";
+.ellipsis-line2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.text-red {
+  color: #db3652;
+}
+.text-gray {
+  color: #666;
+}
+.text-blue {
+  color: #0079fe;
+}
+.text-dark {
+  color: #333;
+}
+.text-white {
+  color: #fff;
+}
+.view {
+  width: 3.75rem;
+  margin: 0 auto;
+}
+#swiper-first {
+  width: 100%;
+  height: 1.6rem;
+  background-color: #333;
+}
+#swiper-second .swiper-slide {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.1rem 0;
+}
+#swiper-second .swiper-slide:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+[device-dpr="1"] #swiper-second .swiper-slide:after {
+  height: 1px;
+}
+[device-dpr="2"] #swiper-second .swiper-slide:after {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] #swiper-second .swiper-slide:after {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
+}
+#swiper-second .swiper-slide .item {
+  text-align: center;
+  -ms-flex: 1;
+      flex: 1;
+}
+#swiper-second .swiper-slide .item .text {
+  font-size: 0.8em;
+}
+#swiper-second .swiper-slide .iconfont {
+  font-size: 2em;
+  color: #3db13c;
+}
+.hot-panel {
+  position: relative;
+  padding: 0.1rem 0;
+  background-color: #fff;
+}
+.hot-panel:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+[device-dpr="1"] .hot-panel:after {
+  height: 1px;
+}
+[device-dpr="2"] .hot-panel:after {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] .hot-panel:after {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
+}
+.hot-panel .title-bar {
+  padding: 0 0.1rem 0.1rem;
+  position: relative;
+}
+.hot-panel .title-bar a {
+  position: absolute;
+  font-size: 0.8em;
+  right: 0.1rem;
+}
+.hot-panel #swiper-third .swiper-slide .item {
+  padding-left: 0.1rem;
+}
+.hot-panel #swiper-third .swiper-slide .item .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.8em;
+}
+.fine-goods-panel {
+  position: relative;
+  margin-top: 0.1rem;
+  padding: 0.1rem 0;
+  background-color: #fff;
+}
+.fine-goods-panel:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+[device-dpr="1"] .fine-goods-panel:after {
+  height: 1px;
+}
+[device-dpr="2"] .fine-goods-panel:after {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] .fine-goods-panel:after {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
+}
+.fine-goods-panel .title-bar {
+  padding: 0 0.1rem 0.1rem;
+  position: relative;
+}
+.fine-goods-panel .title-bar a {
+  position: absolute;
+  font-size: 0.8em;
+  right: 0.1rem;
+}
+.fine-goods-panel #swiper-forth .swiper-slide .item {
+  padding-left: 0.1rem;
+}
+.fine-goods-panel #swiper-forth .swiper-slide .item .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.8em;
+}
+.prize-panel {
+  position: relative;
+  margin-top: 0.1rem;
+  padding: 0.1rem 0;
+  background-color: #fff;
+}
+.prize-panel:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+[device-dpr="1"] .prize-panel:after {
+  height: 1px;
+}
+[device-dpr="2"] .prize-panel:after {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] .prize-panel:after {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
+}
+.prize-panel .title-bar {
+  padding: 0 0.1rem 0.1rem;
+  position: relative;
+}
+.prize-panel .title-bar a {
+  position: absolute;
+  font-size: 0.8em;
+  right: 0.1rem;
+}
+.prize-panel #swiper-fifth .swiper-slide .item {
+  padding-left: 0.1rem;
+}
+.prize-panel #swiper-fifth .swiper-slide .item .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.8em;
+}
+.dream-panel {
+  position: relative;
+  margin-top: 0.1rem;
+  padding: 0.1rem 0;
+  background-color: #fff;
+}
+.dream-panel:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+[device-dpr="1"] .dream-panel:after {
+  height: 1px;
+}
+[device-dpr="2"] .dream-panel:after {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] .dream-panel:after {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
+}
+.dream-panel .title-bar {
+  padding: 0 0.1rem 0.1rem;
+  position: relative;
+}
+.dream-panel .title-bar a {
+  position: absolute;
+  font-size: 0.8em;
+  right: 0.1rem;
+}
+.dream-panel #swiper-sixth .swiper-slide .item {
+  padding-left: 0.1rem;
+}
+.dream-panel #swiper-sixth .swiper-slide .item .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.8em;
+}

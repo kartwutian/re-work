@@ -80,6 +80,15 @@
   flex: 1;
   -webkit-flex: 1;
 }
+
+.ellipsis-line2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 // 定义常用字体颜色
 .color(){
   .text-red{
@@ -124,7 +133,7 @@
   }
 }
 //纵向分隔线
-.separator_lineY(@left:0,@right:0,@bg_color:rgba(255,255,255,.2)){
+.separator_lineY(@left:0,@right:0,@bg_color:rgba(0,0,0,.3)){
 
   position: relative;
 
@@ -139,8 +148,24 @@
   }
 
 }
+.separator_lineY_before(@left:0,@right:0,@bg_color:rgba(0,0,0,.3)){
+
+  position: relative;
+
+  &:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: @left;
+    right: @right;
+    background-color: @bg_color;
+    .physical_px(height);
+  }
+
+}
+
 //横向分隔线
-.separator_lineX(@top:0,@bottom:0,@bg_color:rgba(255,255,255,.2)){
+.separator_lineX(@top:0,@bottom:0,@bg_color:rgba(0,0,0,.3)){
 
   position: relative;
 
@@ -155,6 +180,22 @@
   }
 
 }
+.separator_lineX_before(@top:0,@bottom:0,@bg_color:rgba(0,0,0,.3)){
+
+  position: relative;
+
+  &:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: @top;
+    bottom: @bottom;
+    background-color: @bg_color;
+    .physical_px(width);
+  }
+
+}
+
 //设置边框，true为直接，false为伪元素
 .border(true,@border_width,@border_style:solid,@border_color:#666,@border-radius:0.266667rem){
   border:  @border_width @border_style @border_color;

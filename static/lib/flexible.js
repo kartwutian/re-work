@@ -14,6 +14,7 @@
 
 	// 刷新rem ，以iphone6的width375px为基准 1rem == 100px ，
 	function refreshRem(){
+    dpr = win.devicePixelRatio;
 		var deviceWidth = docEl.getBoundingClientRect().width;
 		if (deviceWidth / dpr > 540) {
 			deviceWidth = 540 * dpr;
@@ -50,7 +51,7 @@
 		tid = setTimeout(function(){
 		  refreshRem();
       refreshFontSize();
-		  docEl.setAttribute('device-dpr', win.devicePixelRatio);
+		  docEl.setAttribute('device-dpr', dpr);
 		}, 300);
 	}, false);
 
@@ -60,7 +61,7 @@
 			tid = setTimeout(function(){
         refreshRem();
         refreshFontSize();
-        docEl.setAttribute('device-dpr', win.devicePixelRatio);
+        docEl.setAttribute('device-dpr', dpr);
       }, 300);
 		}
 	}, false);

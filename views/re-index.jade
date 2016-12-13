@@ -1,0 +1,166 @@
+doctype html
+html
+  head
+    title= title
+    
+    include _meta
+    link(rel="stylesheet", href="/lib/swiper.min.css")
+    link(rel="stylesheet", href="/css/re-index.css")
+    include _rely
+    script(src="/lib/swiper.jquery.min.js")
+    script(src="/js/re-index.js")
+  body
+    .view
+      #swiper-first.swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            img( src="http://images.qingsongchou.com/files/homepage/2016-12-06/148101467974727187f9.jpg")    
+          .swiper-slide
+            img( src="http://images.qingsongchou.com/files/homepage/2016-11-30/148050317894822b4608.png") 
+          .swiper-slide
+            img( src="http://images.qingsongchou.com/files/homepage/2016-12-09/148126822657149c59ff.jpg") 
+        // 如果需要分页器
+        .swiper-pagination
+        //- // 如果需要导航按钮
+        //- .swiper-button-prev
+        //- |   
+        //- .swiper-button-next
+        //- // 如果需要滚动条
+        //- .swiper-scrollbar
+      #swiper-second.swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            div(onclick="location.href='http://www.baidu.com'").item
+              span.iconfont.icon-hot
+              div.text 热门
+            div(onclick="location.href='http://www.baidu.com'").item
+              span.iconfont.icon-smile
+              div.text 优品
+            div(onclick="location.href='http://www.baidu.com'").item
+              span.iconfont.icon-champion
+              div.text 夺宝
+            div(onclick="location.href='http://www.baidu.com'").item
+              span.iconfont.icon-dream
+              div.text 梦想
+      .hot-panel
+        .title-bar
+          | 热门
+          a.text-gray(href="javascritp:;") 查看更多
+        #swiper-third.swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371579302cd0c9b.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/1481537445112140b2c8.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815374666562a21d21.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815375185171f87f53.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+                div.text 热门哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈东方大道多多多多多多多多多多多多多多多多多多多
+      .fine-goods-panel
+        .title-bar
+          | 优品
+          a.text-gray(href="javascritp:;") 查看更多
+        #swiper-forth.swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371579302cd0c9b.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/1481537445112140b2c8.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815374666562a21d21.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815375185171f87f53.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+                div.text 热门哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈东方大道多多多多多多多多多多多多多多多多多多多
+      .prize-panel
+        .title-bar
+          | 夺宝
+          a.text-gray(href="javascritp:;") 查看更多
+        #swiper-fifth.swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371579302cd0c9b.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/1481537445112140b2c8.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815374666562a21d21.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815375185171f87f53.jpg")
+                div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+            .swiper-slide
+              div(onclick="location.href='http://www.baidu.com'").item
+                img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+                div.text 热门哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈东方大道多多多多多多多多多多多多多多多多多多多
+      //- .dream-panel
+      //-   .title-bar
+      //-     | 梦想
+      //-     a.text-gray(href="javascritp:;") 查看更多
+      //-   #swiper-sixth.swiper-container
+      //-     .swiper-wrapper
+      //-       .swiper-slide
+      //-         div(onclick="location.href='http://www.baidu.com'").item
+      //-           img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371579302cd0c9b.jpg")
+      //-           div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+      //-       .swiper-slide
+      //-         div(onclick="location.href='http://www.baidu.com'").item
+      //-           img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+      //-           div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+      //-       .swiper-slide
+      //-         div(onclick="location.href='http://www.baidu.com'").item
+      //-           img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/1481537445112140b2c8.jpg")
+      //-           div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+      //-       .swiper-slide
+      //-         div(onclick="location.href='http://www.baidu.com'").item
+      //-           img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815374666562a21d21.jpg")
+      //-           div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+      //-       .swiper-slide
+      //-         div(onclick="location.href='http://www.baidu.com'").item
+      //-           img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815375185171f87f53.jpg")
+      //-           div.text 来自长白山的长寿瑰宝——鹿茸片、鹿胎膏，test
+      //-       .swiper-slide
+      //-         div(onclick="location.href='http://www.baidu.com'").item
+      //-           img(src="http://images.qingsongchou.com/files/homepage/2016-12-12/14815371330532b83fb0.jpg")
+      //-           div.text 热门哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈东方大道多多多多多多多多多多多多多多多多多多多
+              
+      //-         
