@@ -47,6 +47,7 @@
 
 	// 监听窗口变化，自动刷新rem 及 device-dpr
 	win.addEventListener('resize', function() {
+    win.location.reload(false);
 		clearTimeout(tid);
 		tid = setTimeout(function(){
 		  refreshRem();
@@ -97,5 +98,5 @@
 
 	console.log(flexible);
 
-  console.log(win.devicePixelRatio)
+  
 })(window, window['lib'] || (window['lib'] = {}));
