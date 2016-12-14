@@ -81,6 +81,11 @@
   -webkit-flex: 1;
 }
 
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .ellipsis-line2{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -106,13 +111,16 @@
   .text-white{
     color: #fff;
   }
+  .text-green{
+    color: #43ac43;
+  }
 }
 
 
 
 
 //不同dpr下定义相同真实物理像素,默认1px
-.physical_px(@attr,@px:1px){
+.physical_pxY(@attr,@px:1px){
 
   [device-dpr="1"] &{
     @{attr}:@px;
@@ -132,6 +140,26 @@
     -webkit-transform-origin: 0 0;
   }
 }
+.physical_pxX(@attr,@px:1px){
+
+  [device-dpr="1"] &{
+    @{attr}:@px;
+    }
+
+  [device-dpr="2"] & {
+    @{attr}: @px;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+  }
+
+  [device-dpr="3"] & {
+    @{attr}: @px;
+    -webkit-transform: scaleX(0.333333);
+    transform: scaleX(0.333333);
+    -webkit-transform-origin: 0 0;
+  }
+}
 //纵向分隔线
 .separator_lineY(@left:0,@right:0,@bg_color:rgba(0,0,0,.3)){
 
@@ -144,7 +172,7 @@
     left: @left;
     right: @right;
     background-color: @bg_color;
-    .physical_px(height);
+    .physical_pxY(height);
   }
 
 }
@@ -159,7 +187,7 @@
     left: @left;
     right: @right;
     background-color: @bg_color;
-    .physical_px(height);
+    .physical_pxY(height);
   }
 
 }
@@ -176,7 +204,7 @@
     top: @top;
     bottom: @bottom;
     background-color: @bg_color;
-    .physical_px(width);
+    .physical_pxX(width);
   }
 
 }
@@ -191,7 +219,7 @@
     top: @top;
     bottom: @bottom;
     background-color: @bg_color;
-    .physical_px(width);
+    .physical_pxX(width);
   }
 
 }

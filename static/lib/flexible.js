@@ -46,26 +46,28 @@
   }
 
 	// 监听窗口变化，自动刷新rem 及 device-dpr
-	win.addEventListener('resize', function() {
+  if(win.addEventListener('orientationchange', function() {
     win.location.reload(false);
-		clearTimeout(tid);
-		tid = setTimeout(function(){
-		  refreshRem();
-      refreshFontSize();
-		  docEl.setAttribute('device-dpr', dpr);
-		}, 300);
-	}, false);
+  }, false)) {
+    return
+  }else{
+    win.addEventListener('resize', function() {
+    win.location.reload(false);
+    }, false);
+  }
+  
+	
 
-	win.addEventListener('pageshow', function(e) {
-		if (e.persisted) {
-			clearTimeout(tid);
-			tid = setTimeout(function(){
-        refreshRem();
-        refreshFontSize();
-        docEl.setAttribute('device-dpr', dpr);
-      }, 300);
-		}
-	}, false);
+	// win.addEventListener('pageshow', function(e) {
+	// 	if (e.persisted) {
+	// 		clearTimeout(tid);
+	// 		tid = setTimeout(function(){
+ //        refreshRem();
+ //        refreshFontSize();
+ //        docEl.setAttribute('device-dpr', dpr);
+ //      }, 300);
+	// 	}
+	// }, false);
 
   
 	

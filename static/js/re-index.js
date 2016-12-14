@@ -1,9 +1,9 @@
 $(function(){
   var myFirstSwiper = new Swiper ('#swiper-first', {
       autoplay: 5000,//可选选项，自动滑动
-      initialSlide :2,
+      autoplayDisableOnInteraction: false,
+      initialSlide :0,
       loop: true,
-      
       // 如果需要分页器
       pagination: '.swiper-pagination',
       
@@ -37,5 +37,24 @@ $(function(){
       autoplayDisableOnInteraction: false,
       slidesPerView : 2.1,
     })
+  var mySecondSwiper = new Swiper ('.swiper-recommend', {
+      autoplay: 3000,
+      autoplayDisableOnInteraction: false,
+      slidesPerView : 2.8,
+    })
+
+  // 实现进度条;
+  var aRecommend = $(".recommend-item");
+  aRecommend.each(function(){
+    var _this = $(this)
+    var iHad = parseInt(_this.find(".had").text())
+    var iTarget = parseInt(_this.find(".target").text())
+    var progress =parseInt(iHad/iTarget*100)
+    var left = progress >= 85 ? 85 : progress
+    _this.find(".color").css("width",progress+"%")
+
+    _this.find(".tip").css("left",left+"%").text(progress+"%")
+  })
+
 
 })

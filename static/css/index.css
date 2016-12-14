@@ -4,6 +4,11 @@
 * By bhz
 */
 @charset "utf8";
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .ellipsis-line2 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -70,4 +75,7 @@
 }
 .text-white {
   color: #fff;
+}
+.text-green {
+  color: #43ac43;
 }
