@@ -13,8 +13,7 @@ $(function(){
       return h;  
   } 
 
-  // 当网页的滚动条滚动时要时时判断当前img的位置！
-  window.onscroll = function () {
+  function loadImg() {
 
     var aImg = $("img[data-src]");
 
@@ -34,6 +33,9 @@ $(function(){
     })
 
   }
-  onscroll();
-})
+  // 当网页的滚动条滚动时要时时判断当前img的位置！
+  $(window).on("scroll",loadImg)
 
+  loadImg();
+
+})

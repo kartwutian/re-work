@@ -378,3 +378,7 @@
   transform: scaleX(0.333333);
   -webkit-transform-origin: 0 0;
 }
+.end {
+  text-align: center;
+  line-height: 0.4rem;
+}
