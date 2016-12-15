@@ -29,6 +29,14 @@ var banner =
 */\n";
 
 // 将html转化为jade
+gulp.task('viewtohtml', function() {
+  return gulp.src(['./views/re-index.jade','./views/guess.jade'])
+    .pipe(jade({donotencode: true}))
+    .pipe(gulp.dest('./html'));
+});
+
+
+// 将html转化为jade
 gulp.task('tojade', function() {
   return gulp.src(['./origin-html/*.html','!./src/_*.html'])
     .pipe(html2jade({donotencode: true}))
