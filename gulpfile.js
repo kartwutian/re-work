@@ -32,6 +32,14 @@ var banner =
 gulp.task('viewtohtml', function() {
   return gulp.src(['./views/re-index.jade','./views/guess.jade'])
     .pipe(jade({donotencode: true}))
+    .pipe(htmlBeautify({
+        indent_size: 2,
+        indent_char: ' ',
+        // 这里是关键，可以让一个标签独占一行
+        unformatted: true,
+        // 默认情况下，body | head 标签前会有一行空格
+        extra_liners: []
+    }))
     .pipe(gulp.dest('./html'));
 });
 
