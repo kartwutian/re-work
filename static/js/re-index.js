@@ -128,7 +128,7 @@ $(function(){
 
   }
 
-  scrollLoad(".recommend-item","http://localhost:3000/list",{})
+  scrollLoad(".recommend-item","/list",{})
 
 
   // 用dropload.js插件

@@ -12,6 +12,12 @@ router.get('/', function(req, res, next) {
  
   
 });
+router.get('/upload', function(req, res, next) {
+
+  res.render('image-upload');
+ 
+  
+});
 
 router.post('/', function(req, res, next) {
   
