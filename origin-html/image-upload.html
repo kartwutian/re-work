@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>图片上传</title>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="">
+  <meta name="Keywords" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../static/lib/swiper.min.css">
+  <link rel="stylesheet" href="../static/css/re-index.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/global.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/iconfont.css">
+  <script src="../static/lib/flexible.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../static/lib/jquery.1.8.3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../static/lib/megapix-image.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>
+<body>
+  <div class="view">
+    <img src="file:///D:/bhz/images/6.jpg" alt="">
+    <input id="goodsImages" name="goodsImages" type="file" multiple="true" >
+    
+
+    <script>
+      $("#goodsImages").on("change",function(){
+        if (!this.files.length) return;
+        var files = Array.prototype.slice.call(this.files);
+        var len = this.files.length;
+
+        console.log(files)
+
+        for(var i = 0; i < len; i++){
+          (function(e){
+            var file = files[i];
+            if(!/\/(jpeg|png|gif)$/i.test(file.type)) return;
+
+            if(/\/gif$/i.test(file.type)||file.size < 10*1024){
+              //处理gif或者其他小于10k的图片，不用压缩
+              var reader = new FileReader();
+              reader.readAsDataURL(file);
+              console.log(reader)
+              reader.onload = function(){
+                var img = new Image();
+                img.src = this.result;
+                $(".view").append(img);
+                console.log(this.result.length)
+              }
+            }else{
+
+              // 处理其他图片，要进行压缩
+              var img = new Image(); 
+              $(".view").append(img);
+              // 创建一个压缩对象，该构造函数接收file或者blob。
+              var mpImg = new MegaPixImage(file);
+              console.log( mpImg)
+              console.log( mpImg.blob)
+
+              mpImg.render(img, { maxWidth: 750, maxHeight: 750, quality: 0.8 },function(){
+                console.log(img.src.length)
+              }); 
+              
+
+            }
+          })(i)
+          
+          
+          
+        }
+      })
+
+    </script>
+   <!--  <script>
+      $("#goodsImages").on("change",function(){
+
+        var files = this.files;
+        var len = this.files.length;
+
+        console.log(files)
+
+        for(var i = 0; i < len; i++){
+          var file = files[i];
+          var img = new Image(); 
+          $(".view").append(img)
+      
+          // 创建一个压缩对象，该构造函数接收file或者blob。
+          var mpImg = new MegaPixImage(file);
+          console.log( mpImg)
+          console.log( mpImg.blob)
+
+          mpImg.render(img, { maxWidth: 300, maxHeight: 300, quality: 0.5 },function(){
+
+          }); 
+        
+
+        }
+        
+      })
+
+    </script> -->
+  </div>
+</body>
+</html>
