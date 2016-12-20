@@ -1,0 +1,200 @@
+@charset "utf8";
+@import 'v.less';
+
+.color();
+
+.keyframes (@name,@content) {
+  @-webkit-keyframes @name { @content(); }  
+  @-moz-keyframes @name { @content(); }  
+  @-ms-keyframes @name { @content();}  
+  @-o-keyframes @name { @content(); }
+  @keyframes @name { @content(); }
+}
+
+.keyframes(size,{
+  0%{
+    font-size: 12px;
+  }
+  25%{
+    font-size: 80px;
+  }        
+  50%{
+    font-size: 24px;
+  }
+  75%{
+    font-size: 80px;
+  }
+  100%{
+    font-size: 36px;
+  }
+}); 
+
+.bhz-mod-content{
+  width: 3.75rem;
+  margin: 0 auto;
+  min-height: 100%;
+  background: #384d5e;
+  .bhz-mod-content-header{
+    position: relative;
+    .broadcast{
+      position: absolute;
+      bottom: 0.4rem;
+      left: 15%;
+      width: 70%;
+      color: #fff;
+      height: 0.2rem;
+      line-height: 0.2rem;
+      background-image: url(../images/prize-draw/broadcast.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      i{
+        display: inline-block;
+        width: 10%;
+        text-align: right;
+      }
+      ul{
+        position: absolute;
+        width: 90%;
+        text-align: center;
+        left: 10%;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8em;
+        li{
+          line-height: 0.2rem;
+          
+
+        }
+      }
+    }
+    .btn-group{
+      .btn{
+        position: absolute;
+        bottom: -0.05rem;
+        display: inline-block;
+        min-width: 0.7rem;
+        height: 0.3rem;
+        border-radius: 0.04rem;
+        border: 1px solid transparent;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.8em;
+        line-height: 0.3rem;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        background-image: none;
+        background-color: transparent;
+        cursor: pointer;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        letter-spacing: 0.02rem;
+      }
+      
+      .btn-img{
+        width: 0.8rem;
+        height: 0.3rem;
+        color: #2b3f51;
+        background-image: url(../images/prize-draw/btn.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      #my-prize-btn{
+        left: 5%;
+      }
+      #activity-rule-btn{
+        right: 5%;
+      }
+    }
+
+  }
+
+  .bhz-mod-prizeDraw-list{
+    display: block;
+    background-color: #f00;
+    width: 60%;
+    font-size: 0;
+    margin: 0.4rem auto;
+    position: relative;
+    li{
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      line-height: 0.75rem;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      img{
+        border-radius: 0.05rem;
+        width: 80%;
+        height: 80%;
+        margin: 10% auto;
+      }
+      img.yellow{
+        background-color: rgb(253,224,78); 
+      }
+
+    }
+  }
+
+}
+
+
+
+
+.bhz-mod-content>.bhz-mod-prizeDraw-rules{
+  width: 80%;
+  margin: 10px auto 10px;
+  color: #ccc;
+  line-height: 2;
+  color: rgb(253,224,78);
+  
+}
+.bhz-mod-content>.bhz-mod-prizeDraw-rules>h1{
+  text-align: center;
+  color: #ff0;
+}
+
+.transparent-shadow{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 100;
+}
+.layui-m-layerbtn span[no] {
+  color: #ff4351;
+}
+
+
+.light{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;        
+}
+
+.color-0{
+  background-color: #fff;
+  box-shadow:0px 0px 20px #fff ;
+}
+.color-1{
+  background-color: #6f6;
+  box-shadow:0px 0px 20px #6f6 ;
+}
+.color-2{
+  background-color: #ff0;
+  box-shadow:0px 0px 20px #ff0 ;
+}
+
