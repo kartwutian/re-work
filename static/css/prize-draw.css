@@ -4,6 +4,63 @@
 * By bhz
 */
 @charset "utf8";
+.before-loaded {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+}
+.before-loaded img {
+  width: 0.32rem;
+  height: 0.32rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.activity-rules {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.activity-rules .activity-rules-content {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  background-color: #384d5e;
+  padding-bottom: 0.8rem;
+}
+.activity-rules .activity-rules-content h2 {
+  width: 100%;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  top: 0;
+  text-align: center;
+  color: #fff;
+}
+.activity-rules .activity-rules-content .ensure-btn {
+  position: fixed;
+  width: 100%;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  color: #fff;
+  bottom: 0;
+}
+.activity-rules .activity-rules-content .rules-list {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0.1rem;
+  color: #fff;
+}
 .text-red {
   color: #db3652;
 }

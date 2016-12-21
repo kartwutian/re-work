@@ -1,5 +1,23 @@
 $(function(){
   
+  // 实现loading
+  $(".before-loaded").remove();
+  $(".bhz-mod-content").fadeIn(1000);
+
+  // 实现活动规则
+  $("#activity-rule-btn").on("click",function(){
+    $(".activity-rules").fadeIn(500);
+
+    $(".ensure-btn").on("click",function(){
+      $(".activity-rules").hide(500);
+    })
+
+    $(".activity-rules").on("click",function(){
+      $(".activity-rules").hide(500);
+     
+    });
+  })
+
   // 定义所需变量
   var arr = []; // 用于存放跑马灯参数
   var rootPx = parseFloat($(document.documentElement).css("font-size")); // 1rem
