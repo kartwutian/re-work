@@ -121,6 +121,7 @@
 
 //不同dpr下定义相同真实物理像素,默认1px
 .physical_pxY(@attr,@px:1px){
+  @{attr}:@px;
 
   [device-dpr="1"] &{
     @{attr}:@px;
@@ -141,7 +142,8 @@
   }
 }
 .physical_pxX(@attr,@px:1px){
-
+  @{attr}:@px;
+  
   [device-dpr="1"] &{
     @{attr}:@px;
     }

@@ -43,6 +43,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 1px;
 }
 [device-dpr="1"] #swiper-second .swiper-slide:after {
   height: 1px;
@@ -81,6 +82,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 1px;
 }
 [device-dpr="1"] .hot-panel:after {
   height: 1px;
@@ -128,6 +130,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 1px;
 }
 [device-dpr="1"] .fine-goods-panel:after {
   height: 1px;
@@ -175,6 +178,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 1px;
 }
 [device-dpr="1"] .prize-panel:after {
   height: 1px;
@@ -222,6 +226,7 @@
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 1px;
 }
 [device-dpr="1"] .dream-panel:after {
   height: 1px;
@@ -352,6 +357,7 @@
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  width: 1px;
 }
 [device-dpr="1"] .recommend-panel .recommend-item .desc ul li:not(:last-child):after {
   width: 1px;

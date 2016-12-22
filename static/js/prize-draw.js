@@ -1,22 +1,45 @@
 $(function(){
   
-  // 实现loading
-  $(".before-loaded").remove();
-  $(".bhz-mod-content").fadeIn(1000);
 
-  // 实现活动规则
+  
+  // 进入页面先执行ajax请求，获得活动信息
+  $.ajax({
+    type: 'GET',
+    data: {},
+    url: '/handler/actions.ashx?act=GetLottery&lotteryid=100100',
+    cache: false,
+    timeout: 5000,
+    success: function(data){
+      var oActiveInfo = $.parseJSON(data);
+      $("title").text(oActiveInfo.Lottery.title)
+      console.log(oActiveInfo)
+      // 移除loading，显示页面
+      $(".before-loaded").remove();
+      $(".bhz-mod-content").fadeIn(1000);
+    },
+    error: function(){
+      alert(" ajax error")
+      // 移除loading
+      $(".before-loaded").remove();
+      $(".bhz-mod-content").fadeIn(1000);
+    }
+  });
+
+  
+  
+
+  // 实现活动规则淡入淡出
   $("#activity-rule-btn").on("click",function(){
-    $(".activity-rules").fadeIn(500);
-
-    $(".ensure-btn").on("click",function(){
-      $(".activity-rules").hide(500);
-    })
-
-    $(".activity-rules").on("click",function(){
-      $(".activity-rules").hide(500);
-     
-    });
+    $(".activity-rules").show(500);
   })
+  $(".ensure-btn").on("click",function(){
+    $(".activity-rules").hide(500);
+  })
+
+  $(".activity-rules").on("click",function(){
+    $(".activity-rules").hide(500);
+   
+  });
 
   // 定义所需变量
   var arr = []; // 用于存放跑马灯参数
@@ -59,7 +82,7 @@ $(function(){
 
 
 
-  
+  // 设置开奖区域宽度
   $('.bhz-mod-content>.bhz-mod-prizeDraw-list').css('width',ulWitdth);
   lenChange(ulWitdth);
   // 初始化渲染跑马灯界面
@@ -67,17 +90,68 @@ $(function(){
 
 
   $("#start-btn").click(function(){
-    init();
+
+    // 先显示透明层，防止重复点击触发
     $(".transparent-shadow").show();
-    prizeDraw(randomNum(),show);
+
+    $.ajax({
+    type: 'GET',
+    data: {},
+    url: '/handler/actions.ashx?act=Lot&lotteryid=100100',
+    cache: false,
+    timeout: 5000,
+    success: function(data){
+      var oLotResult = $.parseJSON(data);
+      console.log(oLotResult)
+      init();
+      if(oLotResult.Title == "一等奖"){
+        prizeDraw(51,function(){
+          show(oLotResult);
+        });
+        
+      }else if(oLotResult.Title == "二等奖"){
+        var arr = [45,48]
+        prizeDraw(arr[Math.round(Math.random())],function(){
+          show(oLotResult);
+        });
+        
+      }else if(oLotResult.Title == "三等奖"){
+        var arr = [47,50,52]
+        prizeDraw(arr[Math.round(Math.random()*2)],function(){
+          show(oLotResult);
+        });
+        
+      }else if(oLotResult.Title == "谢谢参与"){
+        var arr = [46,49]
+        prizeDraw(arr[Math.round(Math.random()*2)],function(){
+          show(oLotResult);
+        });
+        
+      }else{
+        var arr = [46,49]
+        prizeDraw(arr[Math.round(Math.random()*2)],function(){
+          show(oLotResult);
+        });
+      }
+      
+      
+
+    },
+    error: function(){
+      alert(" ajax error")
+
+    }
+  })
+    
     
     
   });
 
   //生成随机整数，用于控制中奖num，44<randomNum<54
-  function randomNum(){
-    return Math.floor(Math.random()*9+45);
-  }
+  // function randomNum(){
+  //   return Math.floor(Math.random()*9+45);
+  // }
+
   // 测试生成的随机数
   // for(var i = 0 ;i<100;i++){
   //   console.log(randomNum());
@@ -109,9 +183,11 @@ $(function(){
   }
 
   // 抽奖动画结束后的回调函数
-  function show(){
+  function show(obj){
     $(".transparent-shadow").hide();
-    console.log($(".yellow").attr("src"))
+    alert("恭喜获得"+obj.Prize)
+    
+    
   }
 
   // 抽奖动画实现，num为中奖号码，fn为动画结束时的回调函数
@@ -146,7 +222,12 @@ $(function(){
             $("#item-"+(n+1)+">img").addClass("yellow");
           }
           if(e==num){
-            fn();
+            // 用setTimeout解决1个先alert再渲染class的bug
+            setTimeout(function(){
+              console.log(e)
+              fn();
+            },50)
+            
           }
         },2*(e*e+50))
       })(i);

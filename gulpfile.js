@@ -157,7 +157,7 @@ gulp.task('watch', function () {
   gulp.watch(['origin-views/*.jade','!origin-views/_*.jade'], ['tohtml']);
   gulp.watch(['static/less/*.less','!./static/less/_*.less'], ['css']);
   gulp.watch(['origin-views/_*.jade','static/less/_*.less'], ['2html']);
-  gulp.watch(['static/images/**'], ['imagemin']);
+  // gulp.watch(['static/images/**'], ['imagemin']);
   gulp.watch(['static/slices/*.png'], ['sprite']); 
 
     

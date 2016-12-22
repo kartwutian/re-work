@@ -21,14 +21,16 @@
   transform: translate(-50%, -50%);
 }
 .activity-rules {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fde04e;
   position: fixed;
-  left: 0;
+  width: 3.75rem;
   top: 0;
-  right: 0;
   bottom: 0;
   z-index: 200;
 }
 .activity-rules .activity-rules-content {
+  border-radius: 0.05rem;
   position: absolute;
   width: 80%;
   height: 60%;
@@ -44,7 +46,29 @@
   line-height: 0.4rem;
   top: 0;
   text-align: center;
-  color: #fff;
+  position: relative;
+}
+.activity-rules .activity-rules-content h2:after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 1px;
+}
+[device-dpr="1"] .activity-rules .activity-rules-content h2:after {
+  height: 1px;
+}
+[device-dpr="2"] .activity-rules .activity-rules-content h2:after {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] .activity-rules .activity-rules-content h2:after {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
 }
 .activity-rules .activity-rules-content .ensure-btn {
   position: fixed;
@@ -52,14 +76,38 @@
   height: 0.4rem;
   line-height: 0.4rem;
   text-align: center;
-  color: #fff;
   bottom: 0;
+  position: relative;
+}
+.activity-rules .activity-rules-content .ensure-btn:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 1px;
+}
+[device-dpr="1"] .activity-rules .activity-rules-content .ensure-btn:before {
+  height: 1px;
+}
+[device-dpr="2"] .activity-rules .activity-rules-content .ensure-btn:before {
+  height: 1px;
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+}
+[device-dpr="3"] .activity-rules .activity-rules-content .ensure-btn:before {
+  height: 1px;
+  transform: scaleY(0.333333);
+  -webkit-transform-origin: 0 0;
 }
 .activity-rules .activity-rules-content .rules-list {
   height: 100%;
   overflow-y: scroll;
   padding: 0.1rem;
-  color: #fff;
+}
+.activity-rules .activity-rules-content .rules-list p {
+  padding: 0.05rem 0;
 }
 .text-red {
   color: #db3652;
@@ -97,6 +145,7 @@
   }
 }
 .bhz-mod-content {
+  position: relative;
   width: 3.75rem;
   margin: 0 auto;
   min-height: 100%;

@@ -24,6 +24,7 @@
       <img src="../static/images/loading.gif" alt="">
     </div>
     <section class="bhz-mod-content" style="display:none">
+
       <header class="bhz-mod-content-header">
         <img src="../static/images/prize-draw/001.jpg" alt="">
         <div class="broadcast">
@@ -50,83 +51,65 @@
           </button>
         </div>
       </header>
+
       <ul class="bhz-mod-prizeDraw-list">
         <li id="item-1" class="bmp-list-item">
-          <img class="yellow" src="../static/images/prize-draw/peas.png" alt="">
+          <img class="yellow" src="../static/images/prize-draw/lottery-2.png" alt="">
         </li>
         <li id="item-2" class="bmp-list-item">
           <img src="../static/images/prize-draw/thanks.png" alt="">
         </li>
         <li id="item-3" class="bmp-list-item">
-          <img src="../static/images/prize-draw/goods-1.png" alt="">
+          <img src="../static/images/prize-draw/lottery-3.png" alt="">
         </li>
         <li id="item-8" class="bmp-list-item">
-          <img src="../static/images/prize-draw/goods-2.png" alt="">
+          <img src="../static/images/prize-draw/lottery-3.png" alt="">
         </li>
         <li id="start-btn" class="bmp-list-btn">
           <img src="../static/images/prize-draw/start.jpg" alt="">
         </li>
         <li id="item-4" class="bmp-list-item">
-          <img src="../static/images/prize-draw/goods-3.png" alt="">
+          <img src="../static/images/prize-draw/lottery-2.png" alt="">
         </li>
         <li id="item-7" class="bmp-list-item">
-          <img src="../static/images/prize-draw/goods-4.png" alt="">
+          <img src="../static/images/prize-draw/lottery-1.png" alt="">
         </li>
         <li id="item-6" class="bmp-list-item">
-          <img src="../static/images/prize-draw/goods-5.png" alt="">
+          <img src="../static/images/prize-draw/lottery-3.png" alt="">
         </li>
         <li id="item-5" class="bmp-list-item">
-          <img src="../static/images/prize-draw/goods-6.png" alt="">
+          <img src="../static/images/prize-draw/thanks.png" alt="">
         </li>
       </ul> 
 
-      
 
-      <section class="bhz-mod-prizeDraw-rules">
-        <h1>抽奖规则</h1>
-        <!-- <dl>
-          <dt>1.</dt>
-          <dd>每次抽奖将扣除200爱豆</dd>
-          <dt>2.</dt>
-          <dd>每次抽奖将扣除200爱豆</dd>
-        </dl> -->
-        <p>1.每次抽奖将扣除200爱豆</p>
-        <p>1.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
-      </section>
+      <div class="activity-rules" style="display:none">
+        <div class="activity-rules-content">
+          <h2>活动规则</h2>
+          <div class="rules-list">
+            <p>1.每次抽奖将扣除200爱豆</p>
+            <p>2.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>3.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>4.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>5.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>6.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>7.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>8.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+            <p>9.每次抽奖将扣除200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆200爱豆</p>
+          </div>
+          <div class="ensure-btn">确认</div>
+
+        </div>
+      </div>
+
+      <div class="win-view">
+        
+      </div>
+      <section class="transparent-shadow" style="display:none;"></section>
     </section>
     
-    <section class="transparent-shadow" style="display:none;"></section>
     
-    <div class="activity-rules" style="display:none">
-      <div class="activity-rules-content">
-        <h2>活动规则</h2>
-        <div class="rules-list">
-          再说说load事件和ready事件(这里的load和ready是指jQuery的事件，下同)。
-
-              先说load，load事件主要就是用来代替原生的window.onload，它只能用在两个场景下：
-
-                    ·  window对象上。比如$(window).load(fn);。
-
-                    ·  带有URL的元素(images, scripts, frames, iframes)。比如$(“img”).load(fn);。
-
-              除此之外，任何元素都没有load事件，比如：$(document).load(fn);这是错误的写法，根本不会执行。
-
-              load事件需要页面完全加载完成才可以触发，所谓的完全加载完，不仅仅是dom结构加载完，还需要所有的链接引用都加载完才可以。比如页面中有大量图片，必须等每一个图片都加载完成，才叫完全加载完。
-
-              最重要的还没说，jQuery官方文档明确说明load事件的跨浏览器兼容性很差(It doesn't work consistently nor reliably cross-browser)。经过小菜测试，谷歌浏览器仅仅支持$(window).load(fn);，而火狐浏览器支持$(window).load(fn);和$(“img”).load(fn);。
-
-              所以，除非必要情况下，否则强烈不推荐使用load事件。
-
-              最后说说ready，ready事件可以加在任意元素上，比如$(window).ready(fn);、$(document).ready(fn);、$(“div”).ready(fn);等等。
-
-              ready事件不要求页面完全加载完，只需要加载完dom结构即可触发。
-
-              ready事件可以同时注册多个，执行时，按照注册的先后顺序执行。注意，就算是注册不同元素的ready事件，也是按照先后顺序执行。例如下列代码：
-        </div>
-        <div class="ensure-btn">确认</div>
-
-      </div>
-    </div>
+    
   </body>
 </html>
 

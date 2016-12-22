@@ -19,14 +19,18 @@
 
   }
 }
+
 .activity-rules{
+
+  background-color: rgba(0,0,0,0.2);
+  color: #fde04e;
   position: fixed;
-  left: 0;
+  width: 3.75rem;
   top: 0;
-  right: 0;
   bottom: 0;
   z-index: 200;
   .activity-rules-content{
+    border-radius: 0.05rem;
     position: absolute;
     width: 80%;
     height: 60%;
@@ -41,7 +45,7 @@
       line-height: 0.4rem;
       top: 0;
       text-align: center;
-      color: #fff;
+      .separator_lineY(0,0,rgba(255,255,255,0.5));
     }
     .ensure-btn{
       position: fixed;
@@ -49,14 +53,16 @@
       height: 0.4rem;
       line-height: 0.4rem;
       text-align: center;
-      color: #fff;
       bottom: 0;
+      .separator_lineY_before(0,0,rgba(255,255,255,0.5));
     }
     .rules-list{
       height: 100%;
       overflow-y: scroll;
       padding: 0.1rem;
-      color: #fff;
+      p{
+        padding: 0.05rem 0;
+      }
     }
   }
 }
@@ -91,6 +97,7 @@
 }); 
 
 .bhz-mod-content{
+  position: relative;
   width: 3.75rem;
   margin: 0 auto;
   min-height: 100%;
