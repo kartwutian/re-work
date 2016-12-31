@@ -109,6 +109,166 @@
 .activity-rules .activity-rules-content .rules-list p {
   padding: 0.05rem 0;
 }
+.win-view {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url("../images/prize-draw/winning1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.win-view .win-view-content {
+  position: absolute;
+  left: 0.8rem;
+  top: 2.37rem;
+  width: 2.05rem;
+  height: 1.3rem;
+}
+.win-view .win-view-content .header {
+  text-align: center;
+  font-weight: bold;
+  line-height: 2;
+}
+.win-view .win-view-content .body {
+  text-align: center;
+  width: 2.05rem;
+  font-size: 1.2em;
+  line-height: 0.7rem;
+  height: 0.7rem;
+  color: #c52a2a;
+}
+.win-view .win-view-content .body img {
+  display: block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin: 0.05rem auto;
+}
+.win-view .win-view-content .footer {
+  position: absolute;
+  width: 2.05rem;
+  height: 2em;
+  bottom: 0;
+}
+.win-view .win-view-content .footer .btn {
+  position: absolute;
+  background-color: #d21d14;
+  line-height: 2;
+  padding: 0 0.1rem;
+  border-radius: 0.2rem;
+}
+.win-view .win-view-content .footer .left {
+  left: 0.1rem;
+}
+.win-view .win-view-content .footer .right {
+  right: 0.1rem;
+}
+.unlogin {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.unlogin .tips {
+  text-align: center;
+  border-radius: 0.05rem;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  background-color: #546fad;
+  line-height: 2;
+}
+.prizing {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.prizing .tips {
+  text-align: center;
+  border-radius: 0.05rem;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  background-color: #546fad;
+  line-height: 2;
+}
+.lottery-error {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.lottery-error .tips {
+  text-align: center;
+  border-radius: 0.05rem;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  background-color: #546fad;
+  line-height: 2;
+}
+.no-more-chance {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.no-more-chance .tips {
+  text-align: center;
+  border-radius: 0.05rem;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  background-color: #546fad;
+  line-height: 2;
+}
+.not-lottery {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.not-lottery .tips {
+  text-align: center;
+  border-radius: 0.05rem;
+  position: absolute;
+  width: 60%;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  background-color: #546fad;
+  line-height: 3;
+}
+.text-gold {
+  color: #fde04e;
+}
 .text-red {
   color: #db3652;
 }
@@ -151,10 +311,69 @@
   min-height: 100%;
   background: #384d5e;
 }
-.bhz-mod-content .bhz-mod-content-header {
+.bhz-mod-content .header-bar {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0.1rem;
+  line-height: 0.4rem;
+  height: 0.4rem;
+}
+.bhz-mod-content .header-bar .left {
+  -ms-flex: 1;
+      flex: 1;
+  text-align: left;
+}
+.bhz-mod-content .header-bar .right {
+  -ms-flex: 1;
+      flex: 1;
+  text-align: right;
+}
+.bhz-mod-content .bhz-mod-bottom {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 3.75rem;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  overflow: auto;
+  z-index: 300;
+  background-color: #fff;
+  opacity: 0;
+}
+.bhz-mod-content .bhz-mod-bottom .bhz-mod-bottom-item {
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+}
+.bhz-mod-content .bhz-mod-bottom .bhz-mod-bottom-item .bmb-item-header {
+  position: relative;
+  line-height: 40px;
+  border-bottom: 1px dashed #ccc;
+}
+.bhz-mod-content .bhz-mod-bottom .bhz-mod-bottom-item .bmb-item-header .bmb-item-header-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bhz-mod-content .bhz-mod-bottom .bhz-mod-bottom-item .bmb-item-body {
+  position: relative;
+  line-height: 40px;
+}
+.bhz-mod-content .bhz-mod-bottom .bhz-mod-bottom-item .bmb-item-body .bmb-item-body-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bhz-mod-content .bhz-mod-bottom .bhz-mod-more {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+.bhz-mod-content .bhz-mod-content-banner {
   position: relative;
 }
-.bhz-mod-content .bhz-mod-content-header .broadcast {
+.bhz-mod-content .bhz-mod-content-banner .broadcast {
   position: absolute;
   bottom: 0.4rem;
   left: 15%;
@@ -167,12 +386,12 @@
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.bhz-mod-content .bhz-mod-content-header .broadcast i {
+.bhz-mod-content .bhz-mod-content-banner .broadcast i {
   display: inline-block;
   width: 10%;
   text-align: right;
 }
-.bhz-mod-content .bhz-mod-content-header .broadcast ul {
+.bhz-mod-content .bhz-mod-content-banner .broadcast ul {
   position: absolute;
   width: 90%;
   text-align: center;
@@ -184,10 +403,10 @@
       flex-direction: column;
   font-size: 0.8em;
 }
-.bhz-mod-content .bhz-mod-content-header .broadcast ul li {
+.bhz-mod-content .bhz-mod-content-banner .broadcast ul li {
   line-height: 0.2rem;
 }
-.bhz-mod-content .bhz-mod-content-header .btn-group .btn {
+.bhz-mod-content .bhz-mod-content-banner .btn-group .btn {
   position: absolute;
   bottom: -0.05rem;
   display: inline-block;
@@ -213,7 +432,7 @@
   user-select: none;
   letter-spacing: 0.02rem;
 }
-.bhz-mod-content .bhz-mod-content-header .btn-group .btn-img {
+.bhz-mod-content .bhz-mod-content-banner .btn-group .btn-img {
   width: 0.8rem;
   height: 0.3rem;
   color: #2b3f51;
@@ -221,15 +440,14 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.bhz-mod-content .bhz-mod-content-header .btn-group #my-prize-btn {
+.bhz-mod-content .bhz-mod-content-banner .btn-group #my-prize-btn {
   left: 5%;
 }
-.bhz-mod-content .bhz-mod-content-header .btn-group #activity-rule-btn {
+.bhz-mod-content .bhz-mod-content-banner .btn-group #activity-rule-btn {
   right: 5%;
 }
 .bhz-mod-content .bhz-mod-prizeDraw-list {
   display: block;
-  background-color: #f00;
   width: 60%;
   font-size: 0;
   margin: 0.4rem auto;
@@ -241,17 +459,40 @@
   height: 0.75rem;
   line-height: 0.75rem;
   text-align: center;
-  color: #fff;
   overflow: hidden;
 }
-.bhz-mod-content .bhz-mod-prizeDraw-list li img {
+.bhz-mod-content .bhz-mod-prizeDraw-list li .bmp-list-btn-start {
   border-radius: 0.05rem;
-  width: 80%;
-  height: 80%;
-  margin: 10% auto;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin: 0.075rem auto;
+  overflow: hidden;
 }
-.bhz-mod-content .bhz-mod-prizeDraw-list li img.yellow {
+.bhz-mod-content .bhz-mod-prizeDraw-list .bmp-list-item .prize {
+  background-color: #32c5f1;
+  border-radius: 0.05rem;
+  font-size: 14px;
+  width: 0.6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  color: #ff4351;
+  margin: 0.075rem auto;
+  overflow: hidden;
+}
+.bhz-mod-content .bhz-mod-prizeDraw-list .bmp-list-item .prize.highlight {
   background-color: #fde04e;
+}
+.bhz-mod-content .btn-bar {
+  padding: 0.1rem;
+  position: relative;
+}
+.bhz-mod-content .btn-bar .surplus-btn {
+  width: 10em;
+  text-align: center;
+  padding: 0 0.1rem;
+  border-radius: 0.15rem;
+  box-shadow: 0 0 0.05rem #1dc752;
+  margin: 0 auto;
 }
 .bhz-mod-content > .bhz-mod-prizeDraw-rules {
   width: 80%;

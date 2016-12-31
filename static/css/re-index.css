@@ -4,6 +4,9 @@
 * By bhz
 */
 @charset "utf8";
+.text-gold {
+  color: #fde04e;
+}
 .text-red {
   color: #db3652;
 }

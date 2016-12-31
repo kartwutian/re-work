@@ -45,16 +45,14 @@
 
   }
 
+
+  // var evt = "onorientationchange" in win ? "orientationchange" : "resize";
 	// 监听窗口变化，自动刷新rem 及 device-dpr
-  if(win.addEventListener('orientationchange', function() {
-    win.location.reload(false);
-  }, false)) {
-    return
-  }else{
+    
     win.addEventListener('resize', function() {
     win.location.reload(false);
     }, false);
-  }
+
   
 	
 

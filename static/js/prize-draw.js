@@ -1,7 +1,40 @@
 $(function(){
   
 
-  
+  $(".win-view").click(function(){
+    init();
+    $(".win-view").hide()
+
+  })
+  $(".btn.right").click(function(){
+    window.location.href = "http://www.baidu.com"
+  })
+
+  function getNewArr(arr) {
+    var len = arr.length; // min len 3 , max len 7 奖项设置最多有2个重复，否则后面代码就有问题了
+    var newArr = [];
+    var oThanks = {LotItemID:"gg",Title:"谢谢参与",TitlePic:null}
+    if(len== 3){
+      newArr = [arr[1],arr[2],arr[0],arr[1],oThanks,arr[2],arr[0],oThanks]
+    }else if(len == 4){
+      newArr = [arr[2],arr[0],arr[1],arr[2],arr[0],arr[3],arr[1],oThanks]
+    }else if(len == 5){
+      newArr = [arr[3],arr[0],arr[2],arr[0],arr[1],arr[4],arr[1],oThanks]
+    }else if(len == 6){
+      newArr = [arr[4],arr[0],arr[3],arr[1],arr[0],arr[5],arr[2],oThanks]
+    }else if(len == 7){
+      newArr = [arr[5],arr[0],arr[4],arr[2],arr[1],arr[6],arr[3],oThanks]
+    }
+
+    return newArr;
+  }
+
+  function createImg(src){
+    var img = new Image()
+    img.src = src
+    return img
+  }
+
   // 进入页面先执行ajax请求，获得活动信息
   $.ajax({
     type: 'GET',
@@ -11,22 +44,149 @@ $(function(){
     timeout: 5000,
     success: function(data){
       var oActiveInfo = $.parseJSON(data);
-      $("title").text(oActiveInfo.Lottery.title)
+      $("title").text(oActiveInfo.Lottery.title);
+
       console.log(oActiveInfo)
+      var newLotItems = oActiveInfo.LotItems.length==8 ? oActiveInfo.LotItems: getNewArr(oActiveInfo.LotItems)
+
+      for(var n =0 ,len = newLotItems.length; n < len; n++){
+        if(newLotItems[n].TitlePic){
+          $("#item-"+ (n+1) +" .prize").html(createImg(newLotItems[n].TitlePic))
+        }else{
+          $("#item-"+ (n+1) +" .prize").html(newLotItems[n].Title)
+        }
+      }
+      
+
+      for(var i = 0; i < 8; i++){
+        newLotItems[i].roundNum = 45+i
+      }
+      console.log(newLotItems)
+
       // 移除loading，显示页面
       $(".before-loaded").remove();
       $(".bhz-mod-content").fadeIn(1000);
+
+
+      $("#start-btn").click(function(){
+        
+        isLottery = parseInt($(".surplus-btn .times").text());
+        if(isLottery){
+
+          addTransparentShaow();
+          $(".prizing").show();
+
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: '/handler/actions.ashx?act=Lot&lotteryid=100100',
+            cache: false,
+            success: function(data){
+             $(".prizing").hide();
+              var oLotResult = $.parseJSON(data);
+              console.log(oLotResult)
+              if(oLotResult.msg == "请先登录"){
+                $(".unlogin").show()
+                setTimeout(function(){
+                  window.location.href= "http://weiai.yyyju.com/login.aspx?returnUrl=http://weiai.yyyju.com/static/re-work/origin-html/prize-draw.html"
+                },2000)
+                
+
+              }else{
+                isLottery = isLottery-1;
+                $(".surplus-btn .times").text(isLottery)
+                
+                // 获得随机数数组
+                function getNumArr(){
+                  for (var j = 0; j < newLotItems.length; j++){
+                    if(oLotResult.LotItemID ){
+                      if(oLotResult.LotItemID == newLotItems[j].LotItemID){
+                        console.log(newLotItems[j].roundNum)
+                        if(newLotItems[j].roundNum == 45 + j ){
+                          return [newLotItems[j].roundNum]
+                        }else{
+                          return [45+j,newLotItems[j].roundNum]
+                        }
+                      }
+                      
+
+                    }else{
+                      if(newLotItems[j].LotItemID == "gg"){
+                        console.log(newLotItems[j].roundNum)
+                        if(newLotItems[j].roundNum == 45 + j ){
+                          return [newLotItems[j].roundNum]
+                        }else{
+                          return [45+j,newLotItems[j].roundNum]
+                        }
+                      }
+                    }
+                  }
+                }
+                var numArr = getNumArr()
+                if(numArr.length == 1){
+                  prizeDraw(numArr[0],function(){
+                    show(oLotResult);
+                  });
+                }else{
+                  prizeDraw(numArr[Math.round(Math.random())],function(){
+                    show(oLotResult);
+                  });
+                }
+
+                
+              }
+            },
+            error: function(){
+              $(".transparent-shadow").remove()
+              $(".prizing").hide();
+              $(".lottery-error").show();
+              setTimeout(function(){
+                $(".lottery-error").hide();
+              },2000)
+
+            }
+          })
+        }else{
+          $(".no-more-chance").show();
+          $(".no-more-chance .tips").animate({bottom: "60%"},2000,function(){
+            $(".no-more-chance .tips").css("bottom","10%");
+            $(".no-more-chance").hide();
+          })
+        }
+
+
+        
+      });
     },
     error: function(){
       alert(" ajax error")
       // 移除loading
       $(".before-loaded").remove();
-      $(".bhz-mod-content").fadeIn(1000);
+      window.location.reload(true);
     }
   });
 
   
-  
+  // 显示隐藏记录
+  $(".my-records-btn").on("click", function() {
+
+    $(".list-shadow").show()
+    $("#my-records").show().animate({
+      top: '20%',
+      opacity: 1
+    }, 500)
+  });
+
+  $(".list-shadow").on("click",function() {
+    $(this).hide();
+    $("#my-records").animate({
+      top: '100%',
+      opacity: 0
+    }, 500,function(){
+      $("#my-records").hide();
+    });
+  });
+
 
   // 实现活动规则淡入淡出
   $("#activity-rule-btn").on("click",function(){
@@ -46,6 +206,13 @@ $(function(){
   var rootPx = parseFloat($(document.documentElement).css("font-size")); // 1rem
   var ulWitdthRem = 3.75*0.6;  // 设置抽奖区域宽度
   var ulWitdth = rootPx*ulWitdthRem; //rem 转为 px
+  var isLottery = false; // 判断是否在开奖中
+
+  // 增加透明遮罩层，防止发起重复ajax开奖请求
+  function addTransparentShaow(){
+    var transparentShadow = '<section class="transparent-shadow"></section>';
+    $(".bhz-mod-content").append($(transparentShadow))
+  }
 
   console.log(ulWitdth)
  
@@ -89,63 +256,7 @@ $(function(){
   initLights(arr[0],arr[0],arr[1]);
 
 
-  $("#start-btn").click(function(){
 
-    // 先显示透明层，防止重复点击触发
-    $(".transparent-shadow").show();
-
-    $.ajax({
-    type: 'GET',
-    data: {},
-    url: '/handler/actions.ashx?act=Lot&lotteryid=100100',
-    cache: false,
-    timeout: 5000,
-    success: function(data){
-      var oLotResult = $.parseJSON(data);
-      console.log(oLotResult)
-      init();
-      if(oLotResult.Title == "一等奖"){
-        prizeDraw(51,function(){
-          show(oLotResult);
-        });
-        
-      }else if(oLotResult.Title == "二等奖"){
-        var arr = [45,48]
-        prizeDraw(arr[Math.round(Math.random())],function(){
-          show(oLotResult);
-        });
-        
-      }else if(oLotResult.Title == "三等奖"){
-        var arr = [47,50,52]
-        prizeDraw(arr[Math.round(Math.random()*2)],function(){
-          show(oLotResult);
-        });
-        
-      }else if(oLotResult.Title == "谢谢参与"){
-        var arr = [46,49]
-        prizeDraw(arr[Math.round(Math.random()*2)],function(){
-          show(oLotResult);
-        });
-        
-      }else{
-        var arr = [46,49]
-        prizeDraw(arr[Math.round(Math.random()*2)],function(){
-          show(oLotResult);
-        });
-      }
-      
-      
-
-    },
-    error: function(){
-      alert(" ajax error")
-
-    }
-  })
-    
-    
-    
-  });
 
   //生成随机整数，用于控制中奖num，44<randomNum<54
   // function randomNum(){
@@ -178,16 +289,32 @@ $(function(){
 
   // 封装每次点击重置函数
   function init(){
-    $(".bhz-mod-prizeDraw-list>.bmp-list-item>img").removeClass("yellow");
-    $("#item-1>img").addClass("yellow");
+    $(".bhz-mod-prizeDraw-list>.bmp-list-item>.prize").removeClass("highlight");
+    $("#item-1>.prize").addClass("highlight");
   }
 
   // 抽奖动画结束后的回调函数
   function show(obj){
-    $(".transparent-shadow").hide();
-    alert("恭喜获得"+obj.Prize)
-    
-    
+    if(obj.Prize != ""){
+      setTimeout(function(){
+        $(".transparent-shadow").remove();
+        $(".win-view-content .header").text("获得"+obj.Title);
+        (obj.TitlePic && obj.TitlePic!="") ? $(".win-view-content .body").html($(".prize.highlight").html()) : $(".win-view-content .body").html(obj.Prize);
+        $(".win-view").show();
+      },1000)
+      
+    }else{
+      $(".transparent-shadow").remove();
+      $(".not-lottery").show();
+
+      $(".not-lottery .tips").animate({bottom: "60%"},2000,function(){
+        $(".not-lottery .tips").css("bottom","10%");
+        $(".not-lottery").hide();
+      })
+    }
+
+   
+
   }
 
   // 抽奖动画实现，num为中奖号码，fn为动画结束时的回调函数
@@ -215,11 +342,11 @@ $(function(){
           }
 
           // 实现九宫格动画
-          $("#item-"+n+">img").removeClass("yellow");
+          $("#item-"+n+">.prize").removeClass("highlight");
           if(n==8){
-            $("#item-1>img").addClass("yellow");
+            $("#item-1>.prize").addClass("highlight");
           }else{
-            $("#item-"+(n+1)+">img").addClass("yellow");
+            $("#item-"+(n+1)+">.prize").addClass("highlight");
           }
           if(e==num){
             // 用setTimeout解决1个先alert再渲染class的bug

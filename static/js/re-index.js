@@ -81,8 +81,8 @@ $(function(){
       // console.log(_this.html())
       var t = document.documentElement.clientHeight + (document.documentElement.scrollTop || document.body.scrollTop);
       var h = getH(_this[0]);
-      // console.log(t,h)
-      if (h < t +100 ) {
+      console.log(h,t)
+      if (h < t  ) {
           $(".end").text("加载中！");
 
           $(window).off("scroll",loadMore)

@@ -20,6 +20,7 @@
   }
 }
 
+
 .activity-rules{
 
   background-color: rgba(0,0,0,0.2);
@@ -67,6 +68,166 @@
   }
 }
 
+.win-view{
+  background-color: rgba(0,0,0,0.2);
+  background-image: url("../images/prize-draw/winning1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  .win-view-content{
+    position: absolute;
+    left: 0.8rem;
+    top: 2.37rem;
+    width: 2.05rem;
+    height: 1.3rem;
+    .header{
+      text-align: center;
+      font-weight: bold;
+      line-height: 2;
+    }
+    .body{
+      text-align: center;
+      width: 2.05rem;
+      font-size: 1.2em;
+      line-height: 0.7rem;
+      height: 0.7rem;
+      color: rgb(197, 42, 42);
+      img{
+        display: block;
+        width: 0.6rem;
+        height: 0.6rem;
+        margin: 0.05rem auto;
+      }
+    }
+    .footer{
+      position: absolute;
+      width: 2.05rem;
+      height: 2em;
+      bottom: 0;
+      .btn{
+        position: absolute;
+        background-color: #d21d14;
+        line-height: 2;
+        padding: 0 0.1rem;
+        border-radius:0.2rem;
+      }
+      .left{
+        left: 0.1rem;
+      }
+      .right{
+        right: 0.1rem;
+      }
+    }
+  }
+}
+.unlogin{
+  background-color: rgba(0,0,0,0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  .tips{
+    text-align: center;
+    border-radius: 0.05rem;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,0);
+    background-color: #546fad;
+    line-height: 2;
+  }
+}
+.prizing{
+  background-color: rgba(0,0,0,0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  .tips{
+    text-align: center;
+    border-radius: 0.05rem;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,0);
+    background-color: #546fad;
+    line-height: 2;
+  }
+}
+
+.lottery-error{
+  background-color: rgba(0,0,0,0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  .tips{
+    text-align: center;
+    border-radius: 0.05rem;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,0);
+    background-color: #546fad;
+    line-height: 2;
+  }
+}
+
+.no-more-chance{
+  background-color: rgba(0,0,0,0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  .tips{
+    text-align: center;
+    border-radius: 0.05rem;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,0);
+    background-color: #546fad;
+    line-height: 2;
+  }
+}
+
+.not-lottery{
+  background-color: rgba(0,0,0,0.2);
+  color: #fde04e;
+  position: fixed;
+  width: 3.75rem;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  .tips{
+    text-align: center;
+    border-radius: 0.05rem;
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,0);
+    background-color: #546fad;
+    line-height: 3;
+  }
+}
 
 .color();
 
@@ -102,7 +263,67 @@
   margin: 0 auto;
   min-height: 100%;
   background: #384d5e;
-  .bhz-mod-content-header{
+  .header-bar{
+    display: flex;
+    padding: 0 0.1rem;
+    line-height: 0.4rem;
+    height: 0.4rem;
+    .left{
+      flex: 1;
+      text-align: left;
+    }
+    .right{
+      flex:1;
+      text-align: right;
+    }
+  }
+
+  .bhz-mod-bottom{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 3.75rem;
+    bottom: 0;
+    border-top: 1px solid #ddd;
+    overflow: auto;
+    z-index: 300;
+    background-color: #fff;
+    opacity: 0;
+    .bhz-mod-bottom-item{
+      position: relative;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      margin-top: 10px;
+      .bmb-item-header{
+        position: relative;
+        line-height: 40px;
+        border-bottom: 1px dashed #ccc;
+        .bmb-item-header-right{
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+      .bmb-item-body{
+        position: relative;
+        line-height: 40px;
+        .bmb-item-body-right{
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    .bhz-mod-more{
+      display: block;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+
+
+  .bhz-mod-content-banner{
     position: relative;
     .broadcast{
       position: absolute;
@@ -186,7 +407,6 @@
 
   .bhz-mod-prizeDraw-list{
     display: block;
-    background-color: #f00;
     width: 60%;
     font-size: 0;
     margin: 0.4rem auto;
@@ -197,21 +417,50 @@
       height: 0.75rem;
       line-height: 0.75rem;
       text-align: center;
-      color: #fff;
       overflow: hidden;
-      img{
+      .bmp-list-btn-start{
+        
         border-radius: 0.05rem;
-        width: 80%;
-        height: 80%;
-        margin: 10% auto;
+        width: 0.6rem;
+        height: 0.6rem;
+        margin: 0.075rem auto;
+        overflow: hidden;
       }
-      img.yellow{
+    }
+    .bmp-list-item{
+      
+      .prize{
+        background-color: #32c5f1;
+        border-radius: 0.05rem;
+        font-size: 14px;
+        width: 0.6rem;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        color: #ff4351;
+        margin: 0.075rem auto;
+        overflow: hidden;
+      }
+
+      .prize.highlight{
         background-color: rgb(253,224,78); 
       }
-
     }
+    
   }
-
+  
+  .btn-bar{
+    padding: 0.1rem;
+    position: relative;
+    .surplus-btn{
+      width: 10em;
+      text-align: center;
+      padding: 0 0.1rem;
+      border-radius: 0.15rem;
+      box-shadow: 0 0 0.05rem #1dc752;
+      margin: 0 auto;
+    }
+    
+  }
 }
 
 

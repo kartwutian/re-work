@@ -49,6 +49,9 @@
   line-height: 0.42rem;
   margin: 0 5px;
 }
+.text-gold {
+  color: #fde04e;
+}
 .text-red {
   color: #db3652;
 }
